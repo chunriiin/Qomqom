@@ -26,4 +26,6 @@ test:
 
 production:
   <<: *default
-  database: chun_production
+  database: 13c5b912437417d0bb7bc36165c2d142
+  username: 13c5b912437417d0bb7bc36165c2d142
+  password: ChunDatabase0406
