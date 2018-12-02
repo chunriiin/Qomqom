@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  to_user: one
+  msg: MyString
+  pts: 
+
+two:
+  user: two
+  to_user: two
+  msg: MyString
+  pts: 
