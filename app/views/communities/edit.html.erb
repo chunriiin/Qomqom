@@ -1,0 +1,11 @@
+<h1>Editing Community</h1>
+
+<%= form_for(@community) do |f| %>
+    <div class="form-group"><%= f.text_field :name, class: "form-control form-control-white" %></div>
+    <div class="form-group"><%= f.text_field :language, class: "form-control form-control-white" %></div>
+    <div class="form-group"><%= f.submit %></div>
+<% end %>
+
+
+<%= link_to 'Show', @community %> |
+<%= link_to 'Back', communities_path %>

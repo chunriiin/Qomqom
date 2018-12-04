@@ -101,15 +101,30 @@
 						<a class="toggleDrawer" href="#"><i class="fa fa-bars fa-2x"></i></a>
 					</div> 
 				</section>-->
-				<section class="center">
-					<div class="slogan">
-						SLIM &amp; STYLISH
-					</div>
-					<div class="secondary-slogan">
-						The Nevada plus Theme By ThemeWagon.
-					</div>
+                <section class="center" style="display: flex;margin: 0 auto;justify-content:center;">
+                <div class="col-sm-4 blog-post"  >
+                <!-- Create community-->
+                    <h2 class="footer-block">新しいコミニティの作成</h2>
+                    <form action="contact-form.php" id="contactForm" method="post" name="contactform" class="" role="form">
+                        <div class="form-group">
+                            <input type="text" class="form-control form-control-white" id="name" name="name" placeholder="コミニティの名前" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control form-control-white" id="email" name="email" placeholder="使用する言語" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control form-control-white" id="message" name="massage" placeholder="コミニティのテーマ" required></textarea>
+                        </div>
+                        <div id="contactFormResponse">
+                        </div>
+                        <div class="form-group">
+                            <input id="cfsubmit" type="submit" class="text-center btn btn-o-white" value="コミュニティを作成する">
+                        </div>
+                    </form>
+                </div>
 				</section>
-			</div><!-- header -->
+            </div>
+            <!-- header -->
 
 			<!-- About us -->
 	        <div id="about" class="about-us">

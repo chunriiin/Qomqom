@@ -1,6 +1,9 @@
 class PagesController < ApplicationController
   def index
   end
-  def community
+
+  def show
   end
+
+  def community; end
 end

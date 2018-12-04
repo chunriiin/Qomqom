@@ -1,0 +1,7 @@
+<p id="notice"><%= notice %></p>
+
+<h1>コミニティ名: <%= @community.name %></h1>
+<h1>使用言語: <%= @community.language %></h1>
+
+<%= link_to 'Edit', edit_community_path(@community) %> |
+<%= link_to 'Back', communities_path %>

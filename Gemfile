@@ -67,3 +67,7 @@ gem 'jquery-rails'
 
 
 gem 'font-awesome-rails'
+
+
+# Devise
+gem 'devise'
