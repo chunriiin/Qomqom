@@ -10,12 +10,13 @@ class CommunitiesController < ApplicationController
   # GET /communities/1
   # GET /communities/1.json
   def show
-    @community = Community.find(params[:id])  
+    @community = Community.find(params[:id]) 
+    @post = Post.new 
   end
 
   # GET /communities/new
   def new
-    @community = Community.new
+    @community = Community.new 
   end
 
   # GET /communities/1/edit
@@ -62,6 +63,15 @@ class CommunitiesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  #join
+  def join
+    @community = Community.find(params[:community_id])
+    @community.users << current_user
+    redirect_to @community
+  end
+
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

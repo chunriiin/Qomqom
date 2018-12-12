@@ -5,3 +5,24 @@
 
 <%= link_to 'Edit', edit_community_path(@community) %> |
 <%= link_to 'Back', communities_path %>
+
+<%= button_to '参加する', community_join_path(@community), class:"btn btn-outline-success my-2 my-sm-0" %>
+
+<h5>subscribed users</h5>
+<% @community.users.each do |u| %>
+    <div><%= u.username %></div>
+<% end %>
+
+<%= form_for([@community, @post]) do |f| %>
+<div class="field">
+    <%= f.text_field :body, autocomplete: "body" %>
+    <div class="form-group"><%= f.submit class: "btn btn-primary",  title: ""%></div>
+</div>
+<% end %>
+
+<h5>posts</h5>
+<% @community.posts.each do |p| %>
+    <div><%= p.body %></div>
+    <div><%= p.user.username %></div>
+<% end %>
+

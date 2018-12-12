@@ -1,3 +1,21 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
-<%= @user.username %>
+<header class="header">
+    <div class="container clearfix">
+        <%= image_tag 'testimonial_22-190x190.jpg',class:'profile-image img-fluid float-left' %>
+         
+        <div class="profile-content float-left">
+            <h1 class="name"><%= @user.username %></h1>
+            <h2 class="desc"><%= @user.language %></h2>
+            <h2 class="desc"><%= @user.introduction %></h2>
+        </div>
+        <div>
+            <%= link_to "contact me", 'btn btn-cta-primary float-right', class:"btn btn-outline-success my-2 my-sm-0" %>
+        </div>
+        <div>
+        <%= link_to "edit", 'edit', class:"btn btn-outline-success my-2 my-sm-0" %>
+    </div>
+
+
+
+    </div>
+
+</header>

@@ -73,3 +73,4 @@ gem 'font-awesome-rails'
 
 # Devise
 gem 'devise'
+

@@ -1,3 +1,118 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.bg-primary {
+    background-color: #f05f40!important;
+}
+
+.mb-auto, .my-auto {
+    margin-bottom: auto!important;
+}
+
+.d-flex {
+    display: -ms-flexbox!important;
+    display: flex!important;
+}
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+header.masthead {
+    padding-top: 10rem;
+    padding-bottom: calc(10rem - 56px);
+    background-image: image-url('mac_glasses1-1000x600.jpg');
+    background-position: center center;
+    background-size: cover;
+}
+
+div {
+    display: block;
+}
+
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.text-center {
+    text-align: center!important;
+}
+
+ml-auto, .mx-auto {
+    margin-left: auto!important;
+}
+
+.section-heading {
+    margin-top: 0;
+}
+
+.text-white {
+    color: #fff!important;
+}
+
+.h2, h2 {
+    font-size: 2rem;
+}
+
+hr.light {
+    border-color: #fff;
+}
+
+.mb-4, .my-4 {
+    margin-bottom: 1.5rem!important;
+}
+
+.mt-4, .my-4 {
+    margin-top: 1.5rem!important;
+}
+
+
+//文章
+.text-faded {
+    color: rgba(255,255,255,.7);
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+//ボタン
+.btn {
+    font-weight: 700;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 300px;
+    font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
+    
+}
+
+.btn-light {
+    color: #212529;
+    background-color: #f8f9fa;
+    border-color: #f8f9fa;
+}
+.btn-xl {
+    padding: 1rem 2rem;
+}
+
+section {
+    display: block;
+}
