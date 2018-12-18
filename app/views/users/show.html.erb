@@ -1,21 +1,56 @@
-<header class="header">
-    <div class="container clearfix">
+<div>
+    <div class="container mx-auto" style="height:200px;">
         <%= image_tag 'testimonial_22-190x190.jpg',class:'profile-image img-fluid float-left' %>
-         
-        <div class="profile-content float-left">
-            <h1 class="name"><%= @user.username %></h1>
-            <h2 class="desc"><%= @user.language %></h2>
-            <h2 class="desc"><%= @user.introduction %></h2>
+        <div>
+            <a class="name"><%= @user.username %></a>
+            <a class="desc"><%= @user.language %></a>
+            <a class="desc"><%= @user.introduction %></a>
         </div>
         <div>
-            <%= link_to "contact me", 'btn btn-cta-primary float-right', class:"btn btn-outline-success my-2 my-sm-0" %>
+            <%= link_to "contact me", 'btn btn-cta-primary float-right', class:"btn btn-outline-danger my-2 my-sm-0" %>
         </div>
-        <div>
-        <%= link_to "edit", 'edit', class:"btn btn-outline-success my-2 my-sm-0" %>
+
+        <%= link_to "edit", 'edit', class:"btn btn-outline-danger my-2 my-sm-0" %>
+    
+    </div>    
+    <hr> 
+    <div style="display: flex;">
+        <div class="d-lg-inline d-none mr-0 ml-5 p-3 float-right" style="height: 300px;background-color: white;">
+            <strong>オススメのコミニティとか入れるところ</strong>
+        </div>
+        <div class="text-center" style="width: 90%;">
+            <div class="">
+                <% @user.posts.each do |p| %>
+                    <div class="card mx-auto p-0" style="width: 85%;">
+                        <div class="card-body p-0" style="display: flex;">
+                            <div style="width:40px;background-color: #EEEEEE;"></div>
+                            
+                            <div class="p-2">
+                                <div class="post-box post-info1" style="display: flex">
+                                    <div class="circle m-1"></div>
+                                    <strong class="mt-1"><%= p.community.name %></strong>
+                                        <span class="mt-1">・</span>
+                                        <span class="mt-1">Posted by</span>
+                                    <a class="mt-1"><%= @user.username %></a>
+                                    <a class="mt-1"><%= p.created_at %></a>  
+                                </div>
+                                <div class="text-left">    
+                                    <a><%= p.body %></a>
+                                    <div>aaaaaaaaaaaaaaaaaaaaaaxxxxxxxxxxxxx</div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="square m-2"></div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                <% end %>   
+            </div>
+        </div>
+
+        <div class="d-lg-inline d-none mr-5 ml-0 p-3 float-right" style="height: 300px;background-color: white;">
+            <strong>オススメのコミニティとか入れるところ</strong>
+        </div>
     </div>
-
-
-
-    </div>
-
-</header>
+</div>

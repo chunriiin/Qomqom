@@ -1,28 +1,43 @@
 <p id="notice"><%= notice %></p>
+<div>
+    <div class="text3" style="height:200px;">
+        <h1><%= @community.name %><br>
+        <%= @community.language %></h1>
+    </div>    
+        <%= button_to '参加する', community_join_path(@community), class:"btn btn-outline-danger m-auto "%>
+    <hr> 
+    <div class="text-center" style="width: 60%;">
+        <%= form_for([@community, @post]) do |f| %>
+        <div class="field">
+            <%= f.text_field :body, autocomplete: "body" %>
+            <div class="form-group"><%= f.submit class: "btn btn-primary",  title: ""%></div>
+        </div>
+        <% end %>
 
-<h1>コミニティ名: <%= @community.name %></h1>
-<h1>使用言語: <%= @community.language %></h1>
+       
+        
+        <div class="col-12">
+            <% @community.posts.each do |p| %>
+                <div class="card mx-auto" style="width: 70%;">
+                    <div class="card-body">
+                        <a><%= p.body %></a>
+                        <a><%= p.user.username %></a>
+                    </div>
+                </div>
+            <% end %>
+        </div>
 
-<%= link_to 'Edit', edit_community_path(@community) %> |
-<%= link_to 'Back', communities_path %>
 
-<%= button_to '参加する', community_join_path(@community), class:"btn btn-outline-success my-2 my-sm-0" %>
+    </div>
 
-<h5>subscribed users</h5>
-<% @community.users.each do |u| %>
-    <div><%= u.username %></div>
-<% end %>
 
-<%= form_for([@community, @post]) do |f| %>
-<div class="field">
-    <%= f.text_field :body, autocomplete: "body" %>
-    <div class="form-group"><%= f.submit class: "btn btn-primary",  title: ""%></div>
+    <%= link_to 'Edit', edit_community_path(@community) %> |
+        <%= link_to 'Back', communities_path %>
+
+        <%= button_to '参加する', community_join_path(@community), class:"btn btn-outline-success my-2 my-sm-0" %>
+
+        <h5>subscribed users</h5>
+        <% @community.users.each do |u| %>
+            <div><%= u.username %></div>
+        <% end %>
 </div>
-<% end %>
-
-<h5>posts</h5>
-<% @community.posts.each do |p| %>
-    <div><%= p.body %></div>
-    <div><%= p.user.username %></div>
-<% end %>
-

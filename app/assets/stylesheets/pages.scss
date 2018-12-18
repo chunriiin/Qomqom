@@ -1,9 +1,20 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// You can use Sass (SCSS
+
+
+
+/* navbar 全体の背景色とボーダーカラー */
+.navbar-default {
+    background-color: #151515;
+}
+
+.navbar-toggler{
+    border: 1px solid white;
+}
 
 .bg-primary {
-    background-color: #f05f40!important;
+    background-color: #FF0033!important;
 }
 
 .mb-auto, .my-auto {
@@ -27,13 +38,14 @@
 header.masthead {
     padding-top: 10rem;
     padding-bottom: calc(10rem - 56px);
-    background-image: image-url('mac_glasses1-1000x600.jpg');
+    background-color: #FF0033!important;
     background-position: center center;
     background-size: cover;
 }
 
 div {
     display: block;
+    
 }
 
 .row {
@@ -47,35 +59,62 @@ div {
 
 .text-center {
     text-align: center!important;
+    justify-content: center;
+    margin: auto;
+}
+
+.text3 {
+    display: flex;
+    text-align: center!important;
+    justify-content: center;
+    align-items: center; 
+    margin: auto;
 }
 
 ml-auto, .mx-auto {
     margin-left: auto!important;
 }
 
-.section-heading {
-    margin-top: 0;
+
+
+
+// トップのロゴ
+
+.text-appercase {
+    text-transform: uppercase!important;
 }
+
+.text1{
+    font-size: 3.0vw;
+    padding-left: 10%;
+  }
+.text2{
+    font-size: 10.0vw;
+    line-height:0.5;
+    margin-bottom: 14%;
+  }
+
+strong, b {
+    font-weight: bold;
+    
+}
+
+.d-flex {
+    display: flex !important; }
+
+
+
+.d-md-block {
+    display: block !important;
+}
+
+
+
 
 .text-white {
     color: #fff!important;
 }
 
-.h2, h2 {
-    font-size: 2rem;
-}
-
-hr.light {
-    border-color: #fff;
-}
-
-.mb-4, .my-4 {
-    margin-bottom: 1.5rem!important;
-}
-
-.mt-4, .my-4 {
-    margin-top: 1.5rem!important;
-}
 
 
 //文章
@@ -94,6 +133,11 @@ p {
     margin-inline-start: 0px;
     margin-inline-end: 0px;
 }
+
+.navbar-brand{
+    color: #f8f9fa;
+}
+
 //ボタン
 .btn {
     font-weight: 700;
@@ -112,7 +156,28 @@ p {
 .btn-xl {
     padding: 1rem 2rem;
 }
-
 section {
     display: block;
 }
+
+.nav-link{
+    color: #f8f9fa;
+    font-weight: bold;
+}
+
+// アラート
+.notice{
+    background:#FF0033;
+    padding: 0%;
+    margin: 0;
+}
+.alert{
+    background:#FF0033;
+    padding: 0%;
+    margin: 0;
+}
+
+.right-box{
+    background-color: red;
+    width: 50%;
+  }

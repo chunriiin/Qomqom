@@ -1,44 +1,67 @@
-<header class="masthead text-center text-white d-flex">
-    <div class="container my-auto">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mx-auto text-center">
-                    <h2 class="section-heading text-white">気になる話題を学習言語でシェアできる
-                    <br>英語・語学のコミニケーションアプリ<br>Qomqom</h2>
-                    <hr class="light my-4">
-                    <p class="text-faded mb-4">
-                    Start Bootstrap has everything you need to get your new website up 
-                    and running in no time! All of the templates and themes on
-                    Start Bootstrap are open source, free to download, and easy to use. No strings attached!
-                    </p>
-
-                    <%= link_to "GET!STARTED", 'communities', class:"btn btn-light btn-xl js-scroll-trigger"  %>
-
-                </div>  
+<head>
+<% if user_signed_in? %>
+<div>
+    <div class="text3" style="height:200px;"> 
+    <%= link_to "コミニティを探す", 'communities', class:"btn btn-light btn-xl js-scroll-trigger"  %>  
+    </div>    
+<hr>
+    <div style="display: flex;">
+        <div class="d-lg-inline d-none mr-0 ml-5 p-3 float-right" style="height: 300px;background-color: white;">
+            <strong>オススメのコミニティとか入れるところ</strong>
+        </div>
+        <div class="text-center" style="width: 90%;">
+            <div class="">
+                <% @posts.each do |p| %>
+                    <div class="card mx-auto" style="width: 85%;">
+                        <div class="card-body p-0" style="display: flex;">
+                            <div style="width:40px;background-color: #EEEEEE;"></div>
+                            <div class="p-2">
+                                <div class="post-box post-info1" style="display: flex">
+                                    <div class="circle m-1"></div>
+                                    <span class="mt-1">Posted by</span>
+                                    <strong class="mt-1"><%= p.user.username %></strong>
+                                    <a class="mt-1"><%= p.created_at %></a> 
+                                </div>
+                            
+                                <div class="text-left">    
+                                    <a><%= p.body %></a>
+                                    <div>aaaaaaaaaaaaaaaaaaaaaaxxxxxxxxxxxxx</div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="square m-2"></div>
+                            </div>
+                        </div>
+                    </div>
+                <% end %>
             </div>
+        </div>
+
+        <div class="d-lg-inline d-none mr-5 ml-0 p-3 float-right" style="height: 300px;background-color: white;">
+            <strong>オススメのコミニティとか入れるところ</strong>
         </div>
     </div>
-</header>
+</div>
 
-<section class="bg-primary">
-        <div class="container">
+
+<% else %>
+
+<!-- Cover -->
+<header class="masthead text-white d-flex">
+        <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-8 mx-auto text-center">
-                    <h2 class="section-heading text-white">hogehoge</h2>
-                    <hr class="light my-4">
-                    <p class="text-faded mb-4">
-                    Start Bootstrap has everything you need to get your new website up 
-                    and running in no time! All of the templates and themes on
-                    Start Bootstrap are open source, free to download, and easy to use. No strings attached!
-                    </p>
-
-                    <%= link_to "GET!STARTED", 'communities', class:"btn btn-light btn-xl js-scroll-trigger"  %>
+                <div class="col-sm-offset-3 text-center">
+                    <h1 class="text1 text-white">世界中に友達をつくろう</h1>
+                    <h1 class="text2 text-white">Qomqom</h1>
+                    <%= link_to "コミニティを探す", 'communities', class:"btn btn-light btn-xl js-scroll-trigger"  %>
 
                 </div>  
             </div>
         </div>
-</section>
+</header>
 
+
+<% end %>
 
 
 

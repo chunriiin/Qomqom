@@ -1,22 +1,29 @@
 <p id="notice"><%= notice %></p>
-<div style="width: 60%;margin: auto;">
-<h1>Communities</h1>
-
-<div class="row">
-  <% @communities.each do |community| %>
-    <div class="col-4" style="width: 18rem; padding: 10px 20px;">
-      <div class="card">
-      <div class="card-body">
-        <h5 class="card-title"><%= link_to community.name, community %></h5>
-        <h6 class="card-subtitle mb-2 text-muted"><%= link_to 'Edit', edit_community_path(community) %></h6>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the cards content.</p>
-        <a href="#" class="card-link"><%= link_to 'Edit', edit_community_path(community) %></a>
-        <a href="#" class="card-link"><%= link_to 'Destroy', community, method: :delete, data: { confirm: 'Are you sure?' } %></a>
+<div>
+  <div class="text3" style="height:200px;">
+    <h1>あなたの興味にあった
+    <br>コミニティを探そう
+    </h1>
+  </div>
+  <hr>
+  <div style="width: 90%;margin: auto;">
+  <div>
+  <%= link_to '新しくコミニティを作成する', new_community_path, class:"btn btn-outline-danger my-2 my-sm-0" %>
+  </div>
+  <div class="row">
+    <% @communities.each do |community| %>
+      <div class="col-3" style="width: 18rem; padding: 10px 20px;">
+        <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"><%= link_to community.name, community %></h5>
+          <h6 class="card-subtitle mb-2 text-muted"><%= link_to community.language, community %></h6>
+          <p class="card-text">Some quick example text to build on the card .</p>
+          <a href="#" class="card-link"><%= link_to 'Edit', edit_community_path(community) %></a>
+          <a href="#" class="card-link"><%= link_to 'Destroy', community, method: :delete, data: { confirm: 'Are you sure?' } %></a>
+        </div>
+        </div>
       </div>
-      </div>
-    </div>
-  <% end %>
-</div>
-
-<%= link_to 'New Community', new_community_path %>
+    <% end %>
+  </div>
+  </div>
 </div>
