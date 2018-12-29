@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   get 'pages/show'
   resources :communities do
     post 'join'
-    resources :posts
+    resources :posts do
+      resources :comments
+    end
   end
   get 'community'=> 'pages#community'
 end

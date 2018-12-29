@@ -3,9 +3,9 @@
 one:
   community: one
   user: one
-  post: one
+  body: MyString
 
 two:
   community: two
   user: two
-  post: two
+  body: MyString

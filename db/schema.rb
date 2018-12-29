@@ -10,15 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_26_182525) do
+ActiveRecord::Schema.define(version: 2018_12_29_105009) do
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "community_id"
-    t.bigint "user_id"
     t.bigint "post_id"
+    t.bigint "user_id"
+    t.string "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["community_id"], name: "index_comments_on_community_id"
     t.index ["post_id"], name: "index_comments_on_post_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
@@ -74,7 +73,6 @@ ActiveRecord::Schema.define(version: 2018_12_26_182525) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "comments", "communities"
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
   add_foreign_key "communities_users", "communities"

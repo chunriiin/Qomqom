@@ -51,10 +51,25 @@
                         </div>
                         <div class="collapse" id="post-<%= p.id %>" >
                             <div class="">
-                                コンテンツが表示されます。
+                                maybeコンテンツが表示されます。
                             </div>
                             <div class="">
-                                
+                                <%= form_for([@community, p, @comment]) do |f| %>
+                                    <div class="field">
+                                        <%= f.text_field :body %>
+                                        <div class="form-group"><%= f.submit class: "btn btn-primary",  title: ""%></div>
+                                    </div>
+                                <% end %>   
+                            </div>
+                            <div class="comments">
+                                <% p.comments.each do |c| %>
+                                    <div class="card mx-auto" style="width: 70%;">
+                                        <div class="card-body">
+                                            <a><%= c.body %></a>
+                                            <a><%= c.user.username %></a>
+                                        </div>
+                                    </div>
+                                <% end %>
                             </div>
                         </div>
                 </div>
@@ -68,3 +83,5 @@
         </div>
     </div>
 </div>
+
+
