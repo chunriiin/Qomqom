@@ -2,43 +2,52 @@
 <html>
 
   <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Chun</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
   </head>
 
   <body class="bg-light">
 
-  <!Navbar-->
+  <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
-    <a class="navbar-brand" href='/'>Qomqom</a>
-      <div class="navbar-header">
-          <button type="button" class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#Navbar" aria-controls="Navbar" aria-expanded="true" aria-label="レスポンシブ・ナビゲーションバー">
-            <span class="navbar-toggler-icon"></span>
-          </button>   
-      </div>
-            <div class="collapse navbar-collapse" id="Navbar">
-              <ul class="nav navbar-nav navbar-nav mr-auto mt-2 ml-sm-auto"> 
-                <li class="nav-item active">
-                  <% if user_signed_in? %>
-                  <%= link_to('ログアウト', destroy_user_session_path, :method => :delete,class:"btn btn-outline-danger my-2 my-sm-0")%>
-                  <% else %>
-                  <li class="nav-item active"><%= link_to "会員登録", new_user_registration_path,class:"btn btn-outline-danger my-2 my-sm-0" %></li>
-                  <%= link_to('サインイン', new_user_session_path,class:"btn btn-outline-danger my-2 my-sm-0") %>
-                  <% end %>
-                </li>
-              </ul>
-            </div>
-
-  <div class="form-inline">
-    <% if user_signed_in? %>
-    <%= link_to current_user.username, user_path(current_user), class:"nav-link" %>
-    <%= image_tag 'testimonial_22-190x190.jpg',class:'profile-image img-fluid float-left', :size =>'50x50'%>
-    <% end %>
+  <a class="navbar-brand" href='/'>Qomqom</a>
+    <div>
+      <button type="button" class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#Navbar" aria-controls="Navbar" aria-expanded="true" aria-label="レスポンシブ・ナビゲーションバー">
+        <span class="navbar-toggler-icon"></span>
+      </button> 
+    </div>
   </div>
+  <div class="collapse navbar-collapse" id="Navbar">
+    
+    <ul class="nav navbar-nav navbar-nav mr-auto mt-2 ml-sm-auto"> 
+      <li class="nav-item active">
+        <% if user_signed_in? %>
+        <%= link_to('ログアウト', destroy_user_session_path, :method => :delete,class:"btn btn-outline-danger my-2 my-sm-0")%>
+        <% else %>
+        <li class="nav-item active"><%= link_to "会員登録", new_user_registration_path,class:"btn btn-outline-danger my-2 my-sm-0" %></li>
+        <%= link_to('サインイン', new_user_session_path,class:"btn btn-outline-danger my-2 my-sm-0") %>
+        <% end %>
+      </li>
+      <li>
+      
+      </li>
+    </ul>
+    <% if user_signed_in? %>
+      <div class="form-inline">
+        
+        <%= link_to current_user.username, user_path(current_user), class:"nav-link" %>
+        <%= image_tag 'testimonial_22-190x190.jpg',class:'profile-image img-fluid float-left', :size =>'50x50'%>
+        
+      </div>
+    <% end %> 
+  </div>
+  
 </nav>
 <div style="margin: auto;">
     <p class="notice"><%= notice %></p>
@@ -47,3 +56,9 @@
     <%= yield %>
   </body>
 </html>
+
+<style>
+.bg-dark {
+    background-color: #000 !important;
+}
+</style>

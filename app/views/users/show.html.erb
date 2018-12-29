@@ -25,8 +25,8 @@
                         <div class="card-body p-0" style="display: flex;">
                             <div style="width:40px;background-color: #EEEEEE;"></div>
                             
-                            <div class="p-2">
-                                <div class="post-box post-info1" style="display: flex">
+                            <div class="p-2" style="width: 60%;">
+                                <div class="card-title post-box post-info1" style="display: flex">
                                     <div class="circle m-1"></div>
                                     <strong class="mt-1"><%= p.community.name %></strong>
                                         <span class="mt-1">・</span>
@@ -34,17 +34,31 @@
                                     <a class="mt-1"><%= @user.username %></a>
                                     <a class="mt-1"><%= p.created_at %></a>  
                                 </div>
-                                <div class="text-left">    
+                                <div class="card-text text-left">    
                                     <a><%= p.body %></a>
                                     <div>aaaaaaaaaaaaaaaaaaaaaaxxxxxxxxxxxxx</div>
                                 </div>
                             </div>
                             <div>
                                 <div class="square m-2"></div>
-                            </div>
-                            
+                                <p>
+                                    <a class="" data-toggle="collapse" href="#post-<%= p.id %>" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                        more
+                                    </a>
+                                </p>
+                                
+                            </div>                            
                         </div>
-                    </div>
+                        <div class="collapse" id="post-<%= p.id %>" >
+                            <div class="">
+                                コンテンツが表示されます。
+                            </div>
+                            <div class="">
+                                
+                            </div>
+                        </div>
+                </div>
+                    
                 <% end %>   
             </div>
         </div>
