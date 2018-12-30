@@ -6,8 +6,8 @@ Rails.application.routes.draw do
   get 'pages/show'
   resources :communities do
     post 'join'
-    resources :posts do
-      resources :comments
+    resources :posts, shallow: true do
+      resources :comments, shallow: true
     end
   end
   get 'community'=> 'pages#community'
