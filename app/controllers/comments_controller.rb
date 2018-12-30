@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
         @comment = @post.comments.new(comment_params)
         @comment.user = current_user
         @comment.save
-        redirect_to current_user
+        redirect_to @post
     end
 
     private

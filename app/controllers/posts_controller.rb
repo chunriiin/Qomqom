@@ -7,6 +7,11 @@ class PostsController < ApplicationController
     redirect_to @community
   end
 
+  def show
+    @post = Post.find(params[:id])
+    @comment = Comment.new
+  end
+
   private
 
   def post_params

@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+<div>
+    <h5>
+    <%= link_to "< " + @post.community.name, @post.community %> 
+    </h5>
+    <div class="text-center" style="width: 30%;">
+
+        <div class="text3" style="height:200px;">
+            <h1><a target="_blank" href="<%= @post.link %>"><%= @post.title %></a>
+        </div>    
+        <%= @post.user.username %>
+        <%= @post.body %></h1>
+        <hr />
+        <div class="col-12">
+            <% @post.comments.each do |c| %>
+                <div class="card mx-auto" style="width: 70%;">
+                    <div class="card-body">
+                        <%= c.user.username %>
+                        <p><%= c.body %></p>
+                    </div>
+                </div>
+            <% end %>
+        </div>
+        <%= form_for([@post, @comment]) do |f| %>
+            <div class="form-group">
+                <label for="body">Body</label>
+                <%= f.text_field :body, class: "form-control" %>
+            </div>
+            <div class="form-group"><%= f.submit class: "btn btn-primary",  title: ""%></div>
+        <% end %>
+
+       
+        
+        
+
+
+    </div>
+</div>
+
+
