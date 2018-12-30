@@ -17,7 +17,13 @@
                         <%= c.user.username %>
                         <p><%= c.body %></p>
                     </div>
-                    <%= link_to "lol ok", new_comment_fix_comment_path(c) %>
+                    <%= link_to "添削してやる", new_comment_fix_comment_path(c) %>
+                    <% c.fix_comments.each do |fc| %>
+                        <p>
+                            Fix by: <%= link_to fc.user.username, fc.user %><br />
+                            <%= fc.body %>
+                        </p>
+                    <% end %>
                 </div>
             <% end %>
         </div>
