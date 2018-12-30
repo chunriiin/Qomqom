@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_30_051731) do
+ActiveRecord::Schema.define(version: 2018_12_30_055828) do
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "post_id"
@@ -36,6 +36,16 @@ ActiveRecord::Schema.define(version: 2018_12_30_051731) do
     t.datetime "updated_at", null: false
     t.index ["community_id"], name: "index_communities_users_on_community_id"
     t.index ["user_id"], name: "index_communities_users_on_user_id"
+  end
+
+  create_table "fix_comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "comment_id"
+    t.bigint "user_id"
+    t.string "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["comment_id"], name: "index_fix_comments_on_comment_id"
+    t.index ["user_id"], name: "index_fix_comments_on_user_id"
   end
 
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -79,6 +89,8 @@ ActiveRecord::Schema.define(version: 2018_12_30_051731) do
   add_foreign_key "comments", "users"
   add_foreign_key "communities_users", "communities"
   add_foreign_key "communities_users", "users"
+  add_foreign_key "fix_comments", "comments"
+  add_foreign_key "fix_comments", "users"
   add_foreign_key "posts", "communities"
   add_foreign_key "posts", "users"
   add_foreign_key "tips", "users"

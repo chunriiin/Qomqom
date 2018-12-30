@@ -19,13 +19,13 @@
                                 <div class="post-box post-info1" style="display: flex">
                                     <div class="circle m-1"></div>
                                     <span class="mt-1">Posted by</span>
-                                    <strong class="mt-1"><%= p.user.username %></strong>
+                                    <strong class="mt-1"><%= link_to p.user.username, p.user %></strong>
                                     <a class="mt-1"><%= p.created_at %></a> 
                                 </div>
                             
                                 <div class="text-left">    
-                                    <a><%= p.body %></a>
-                                    <div>aaaaaaaaaaaaaaaaaaaaaaxxxxxxxxxxxxx</div>
+                                    <%= link_to p.title, p %>
+                                    <div><%= p.body %></div>
                                 </div>
                             </div>
                             <div>

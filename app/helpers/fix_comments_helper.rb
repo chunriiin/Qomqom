@@ -1,0 +1,2 @@
+module FixCommentsHelper
+end

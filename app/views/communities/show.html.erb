@@ -30,7 +30,7 @@
                 <div class="card mx-auto" style="width: 70%;">
                     <div class="card-body">
                         <h5><%= link_to p.title, p %></h5>
-                        <%= p.user.username %>
+                        <span><%= link_to p.user.username, p.user %></span>
                         <p><%= p.body.truncate(25) %></p>
                     </div>
                 </div>
@@ -40,7 +40,6 @@
 
     </div>
 
-
     <%= link_to 'Edit', edit_community_path(@community) %> |
         <%= link_to 'Back', communities_path %>
 
@@ -48,7 +47,7 @@
 
         <h5>subscribed users</h5>
         <% @community.users.each do |u| %>
-            <div><%= u.username %></div>
+            <div><%= link_to u.username, u %></div>
         <% end %>
 </div>
 
