@@ -28,49 +28,17 @@
                             <div class="p-2" style="width: 60%;">
                                 <div class="card-title post-box post-info1" style="display: flex">
                                     <div class="circle m-1"></div>
-                                    <strong class="mt-1"><%= p.community.name %></strong>
+                                    <strong class="mt-1"><%= link_to p.community.name, p.community %></strong>
                                         <span class="mt-1">・</span>
                                         <span class="mt-1">Posted by</span>
                                     <a class="mt-1"><%= @user.username %></a>
                                     <a class="mt-1"><%= p.created_at %></a>  
                                 </div>
                                 <div class="card-text text-left">    
-                                    <a><%= p.body %></a>
-                                    <div>aaaaaaaaaaaaaaaaaaaaaaxxxxxxxxxxxxx</div>
+                                    <%= link_to p.title, p %>
+                                    <div><%= p.body.truncate(25) %></div>
                                 </div>
-                            </div>
-                            <div>
-                                <div class="square m-2"></div>
-                                <p>
-                                    <a class="" data-toggle="collapse" href="#post-<%= p.id %>" role="button" aria-expanded="false" aria-controls="collapseExample">
-                                        more
-                                    </a>
-                                </p>
-                                
-                            </div>                            
-                        </div>
-                        <div class="collapse" id="post-<%= p.id %>" >
-                            <div class="">
-                                maybeコンテンツが表示されます。
-                            </div>
-                            <div class="">
-                                <%= form_for([@community, p, @comment]) do |f| %>
-                                    <div class="field">
-                                        <%= f.text_field :body %>
-                                        <div class="form-group"><%= f.submit class: "btn btn-primary",  title: ""%></div>
-                                    </div>
-                                <% end %>   
-                            </div>
-                            <div class="comments">
-                                <% p.comments.each do |c| %>
-                                    <div class="card mx-auto" style="width: 70%;">
-                                        <div class="card-body">
-                                            <a><%= c.body %></a>
-                                            <a><%= c.user.username %></a>
-                                        </div>
-                                    </div>
-                                <% end %>
-                            </div>
+                            </div>                           
                         </div>
                 </div>
                     
