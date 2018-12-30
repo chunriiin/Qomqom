@@ -181,3 +181,21 @@ section {
     background-color: red;
     width: 50%;
   }
+
+//コンテナ2
+.container-fluid2{
+    padding-top: 10rem;
+    padding-bottom: calc(10rem - 56px);
+    background: linear-gradient(#64b3f4,#c2e59c);
+}
+
+//コンテナ2
+.container-fluid3{
+    background: linear-gradient(#ee9ca7,#ffdde1);
+}
+
+.container-box{
+    background:#ffffff;
+    width:  70% ;
+    height: 50%;
+}
