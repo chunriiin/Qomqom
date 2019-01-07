@@ -11,6 +11,7 @@
         <%= form_for(@community) do |f| %>
             <div class="form-group"><%= f.text_field :name, class: "form-control form-control-white", placeholder: "name" %></div>
             <div class="form-group"><%= f.text_field :language, class: "form-control form-control-white", placeholder: "language" %></div>
+            <div class="form-group"><%= f.text_field :body, class: "form-control form-control-white", placeholder: "どんなコミニティですか？" %></div>
             <div class="form-group"><%= f.submit class: "btn btn-outline-danger my-2 my-sm-0" %></div>
         <% end %>
         </div>

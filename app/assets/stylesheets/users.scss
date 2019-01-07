@@ -3,29 +3,9 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-.header .profile-content .name {
-    color: #49515a;
-    font-size: 38px;
-    margin-bottom: 5px;
-    margin-top: 30px;
-}
-
-.header {
-    padding: 30px 0;
-    background: #f5f5f5;
-   
-}
 
 .container {
-    width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-}
-
-div {
-    display: block;
+   background: linear-gradient(#EB3349,#F45C43);
 }
 
 // img
@@ -33,7 +13,7 @@ div {
     float: left;
 }
 .img-fluid {
-    max-width: 100%;
+    max-width: 80%;
     height: auto;
     border-radius: 50%;
     padding-right: 20px;
@@ -44,36 +24,6 @@ img {
     border-style: none;
 }
 
-
-
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    color: #778492;
-}
-
-.header .profile-content .desc {
-    color: #778492;
-    font-family: "Lato", arial, sans-serif;
-    font-weight: 400;
-    font-size: 18px;
-    margin-top: 0;
-    margin-bottom: 15px;
-}
-
-// btn
-
-.header .btn {
-    margin-top: 100px;
-    font-weight: bold;
-}
-a.btn-cta-primary, .btn-cta-primary {
-    background: #54ba4e;
-    border: 1px solid #54ba4e;
-    color: #fff;
-    font-weight: 600;
-    text-transform: uppercase;
-}
 .float-right {
     float: right!important;
 }

@@ -1,10 +1,9 @@
 <div>
-    <div class="container mx-auto" style="height:200px;">
+    <div class="text3" style="height:200px;">
         <%= image_tag 'testimonial_22-190x190.jpg',class:'profile-image img-fluid float-left' %>
         <div>
-            <a class="name"><%= @user.username %></a>
-            <a class="desc"><%= @user.language %></a>
-            <a class="desc"><%= @user.introduction %></a>
+            <strong><%= @user.username %>/<%= @user.language %></strong>
+            <br><a><%= @user.introduction %></a>
         </div>
         <div>
             <%= link_to "contact me", 'btn btn-cta-primary float-right', class:"btn btn-outline-danger my-2 my-sm-0" %>
@@ -51,5 +50,10 @@
         </div>
     </div>
 </div>
+
+
+
+
+
 
 

@@ -14,7 +14,7 @@
 }
 
 .bg-primary {
-    background-color: #FF0033!important;
+    background-color: linear-gradient(#FF512F,#DD2476);
 }
 
 .mb-auto, .my-auto {
@@ -38,8 +38,9 @@
 header.masthead {
     padding-top: 10rem;
     padding-bottom: calc(10rem - 56px);
-    background-color: #FF0033!important;
-    background-position: center center;
+    // background: linear-gradient(#D31027,#EA384D)!important;
+    background-image: url(https://images.unsplash.com/photo-1506111583091-becfd4bfa05d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80);
+   
     background-size: cover;
 }
 
@@ -64,11 +65,14 @@ div {
 }
 
 .text3 {
+    color: #fff!important;
     display: flex;
     text-align: center!important;
     justify-content: center;
     align-items: center; 
     margin: auto;
+    background: linear-gradient(#D31027,#EA384D);
+    font-size: 3.0vw;
 }
 
 ml-auto, .mx-auto {
@@ -99,8 +103,6 @@ strong, b {
     
 }
 
-.d-flex {
-    display: flex !important; }
 
 
 
@@ -142,7 +144,6 @@ p {
 .btn {
     font-weight: 700;
     text-transform: uppercase;
-    border: none;
     border-radius: 300px;
     font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
     
@@ -186,16 +187,46 @@ section {
 .container-fluid2{
     padding-top: 10rem;
     padding-bottom: calc(10rem - 56px);
-    background: linear-gradient(#64b3f4,#c2e59c);
+    background: linear-gradient(#EB3349,#F45C43);
+    // background: linear-gradient(#c2e59c,#64b3f4);
+    background-size:cover;
+    
 }
 
-//コンテナ2
 .container-fluid3{
-    background: linear-gradient(#ee9ca7,#ffdde1);
+    background-image: url(https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2689&q=80);
+    background-size:cover;
+    background-position: center center;
+    height:40rem;
 }
 
 .container-box{
     background:#ffffff;
+    width:  70%;
+    height: 50%;
+}
+
+.container-box-left{
+    width:  50% ;
+}
+
+
+.container-box-text{
+    font-weight: bold;
+    
+}
+
+.container-box-title{
+    font-size: 2.0vw; 
+}
+
+.square{
+    width: 15rem;
+    height: 10rem;
+    border: 1px solid black;
+}
+
+.container-box2{
     width:  70% ;
     height: 50%;
 }
