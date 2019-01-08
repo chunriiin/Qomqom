@@ -3,36 +3,102 @@
     <h5>
     <%= link_to "< " + @post.community.name, @post.community %> 
     </h5>
-    <div class="text-center" style="width: 30%;">
+    <div class="">
         <div class="text3" style="height:200px;">
-            <h1><a target="_blank" href="<%= @post.link %>"><%= @post.title %></a>
-        </div>    
-        <%= @post.user.username %>
-        <%= @post.body %></h1>
+            <h1><a target="_blank" href="<%= @post.link %>"><%= @post.title %></a></h1>
+        </div> 
+            <%= @post.user.username %>
+            <br><%= @post.body %>   
         <hr />
         <div class="col-12">
-            <% @post.comments.each do |c| %>
-                <div class="card mx-auto" style="width: 70%;">
-                    <div class="card-body">
-                        <%= c.user.username %>
-                        <p><%= c.body %></p>
+            <div class="reply-box card mx-auto p-3" style="width: 60%;">
+                <%= form_for([@post, @comment]) do |f| %>
+                    <div class="form-group">
+                        <%= f.text_field :body, class: "form-control", placeholder: "コメントする..." %>
                     </div>
-                    <%= link_to "添削してやる", new_comment_fix_comment_path(c) %>
-                    <% c.fix_comments.each do |fc| %>
-                        <p>
-                            Fix by: <%= link_to fc.user.username, fc.user %><br />
-                            <%= fc.body %>
-                        </p>
-                    <% end %>
+                    <div class="form-group"><%= f.submit class: "btn btn-primary",  title: ""%></div>
+                <% end %>  
+            </div>
+            <% @post.comments.each do |c| %>
+                <div class="card mx-auto" style="width: 60%;">
+                    <div class="comment-flex">
+                        <div class="circle my-3 ml-3"></div>
+                        <div class="card-body p-2">
+                            <div class="comment-box p-2">
+                                <strong><%= c.user.username %></strong>
+                                <a class="comment-time"><%= c.created_at %></a>
+                                <br><a class="comment-body"><%= c.body %></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="correct ml-auto" style="color: white;"><%= link_to "correct", new_comment_fix_comment_path(c) %></div>
+                    <div class="fix_comment_box ml-auto p-3">
+                        <% c.fix_comments.each do |fc| %>
+                            <div class="fix_comment_body m-3 p-1">
+                                Fix by: <%= link_to fc.user.username, fc.user %><a class="comment-time"><%= fc.created_at %></a><br />
+                                <%= fc.body %>
+                            </div>
+                        <% end %>
+                    </div>
                 </div>
             <% end %>
         </div>
-        <%= form_for([@post, @comment]) do |f| %>
-            <div class="form-group">
-                <label for="body">Body</label>
-                <%= f.text_field :body, class: "form-control" %>
-            </div>
-            <div class="form-group"><%= f.submit class: "btn btn-primary",  title: ""%></div>
-        <% end %>
+        
     </div>
 </div>
+
+
+<style>
+.reply-box{
+    
+
+}
+
+.form-control{
+    background-color: #D7EEFF;
+}
+
+
+
+.comment-flex{
+    display: flex;
+}
+
+.comment-box{
+    background: #DDDDDD;
+    border-radius: 4px ;
+    font-size: 80% ;
+}
+
+.comment-time{
+    font-size: 30% ;
+    color: #657786;
+}
+
+.comment-body{
+    font-size: 120% ;
+}
+
+.correct{
+    color: white;
+    font-size: 30% ;
+    margin-right:5% ;
+    margin-top:-5% ;
+    font-weight: bold;
+
+}
+
+.fix_comment_box{
+    width: 80% ;
+
+}
+
+.fix_comment_body{
+    border-radius: 4px ;
+    font-size: 80% ;
+    border: 1px solid #DDDDDD;
+}
+
+
+
+</style>
