@@ -1,3 +1,4 @@
+<html style="min-height: 100vh;">
 <p id="notice"><%= notice %></p>
 <div>
     <div class="text3" style="height:200px;">
@@ -7,9 +8,8 @@
         
   
     <div class="posts-box mt-5"style="display: flex;">
-        <div class="d-lg-inline d-none mr-0 ml-5 p-3 float-right" style="height: 300px; background-color: white;">
+        <div class="d-lg-inline d-none mr-0 ml-5 p-3 float-right col-2" style="height: 300px; background-color: white;">
             <%= button_to '参加する', community_join_path(@community), class:"btn btn-outline-danger m-auto" %>
-            <strong>オススメのコミニティとか入れるところ</strong>
             <% @community.users.each do |u| %>
                 <div><%= link_to u.username, u %></div>
             <% end %>
@@ -42,8 +42,7 @@
             </div>
         </div>
         
-        <div class="d-lg-inline d-none mr-5 ml-0 p-3 float-right" style="height: 300px;background-color: white;">
-        <strong>オススメのコミニティとか入れるところ</strong>
+        <div class="d-lg-inline d-none mr-5 ml-0 p-3 float-right col-2" style="height: 300px;background-color: white;">
                 <%= form_for([@community, @post]) do |f| %>
                     <div class="form-group">
                         <label for="title">Title</label>
@@ -62,6 +61,7 @@
         </div>        
     </div>
 </div>
+</html>
 
 
 
