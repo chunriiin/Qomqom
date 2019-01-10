@@ -5,6 +5,7 @@ class PostsController < ApplicationController
     @post.user = current_user
     @thumb = LinkThumbnailer.generate(@post.link)
     @post.image = @thumb.images.first.src.to_s
+    @post.description = @thumb.description
     @post.save
     redirect_to @community
   end
