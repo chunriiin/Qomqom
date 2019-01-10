@@ -3,6 +3,8 @@ class PostsController < ApplicationController
     @community = Community.find(params[:community_id])
     @post = @community.posts.new(post_params)
     @post.user = current_user
+    @thumb = LinkThumbnailer.generate(@post.link)
+    @post.image = @thumb.images.first.src.to_s
     @post.save
     redirect_to @community
   end
