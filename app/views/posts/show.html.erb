@@ -4,12 +4,15 @@
     <h5>
     <%= link_to "< " + @post.community.name, @post.community %> 
     </h5>
-    <div class="">
+    <div class="post">
         <div class="text3" style="height:200px;">
             <h1><a target="_blank" href="<%= @post.link %>"><%= @post.title %></a></h1>
         </div> 
-            <%= @post.user.username %>
-            <br><%= @post.body %>   
+            <img src="<%= @post.image %>" />
+            <div>
+                <%= @post.user.username %>
+                <br><%= @post.body %>   
+            </div>
         <hr />
         <div class="col-12">
             <div class="reply-box card mx-auto p-3" style="width: 60%;">
