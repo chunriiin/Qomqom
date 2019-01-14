@@ -84,3 +84,4 @@ class CommunitiesController < ApplicationController
       params.require(:community).permit(:name, :language)
     end
 end
+

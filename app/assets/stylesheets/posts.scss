@@ -4,8 +4,9 @@
 
 .posts {
     img {
-        height: 150px;
-        width: 150px;
+        width: 8rem;
+        height: 8rem;
+        border-radius: 0.25rem;
     }
 }
 
@@ -20,4 +21,6 @@ img.index-post {
     height: 100%;
     width: 100%;
 }
+
+
 

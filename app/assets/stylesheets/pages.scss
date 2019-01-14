@@ -221,7 +221,7 @@ section {
 }
 
 .square{
-    width: 15rem;
+    width: 10rem;
     height: 10rem;
     border: 1px solid black;
 }
@@ -237,6 +237,24 @@ section {
 }
 
 .text-left{
-    width:  50% ;
+    
+}
+
+.text-left a{
+    color: black;
+}
+
+.url_title{
+    border: 1px solid #EEEEEE;
+    border-radius: 0.25rem;
+}
+
+.url_image{
+    border-radius: 0.25rem;
+    background-color: #EEEEEE;   
+}
+
+.url_des{
+    font-size: 0.8vw; 
 }
 
