@@ -5,14 +5,15 @@
     <%= link_to "< " + @post.community.name, @post.community %> 
     </h5>
     <div class="post">
-        <div class="text3" style="height:200px;">
-            <h1><a target="_blank" href="<%= @post.link %>"><%= @post.title %></a></h1>
-        </div> 
-            <img src="<%= @post.image %>" />
-            <p><%= @post.description %></p>
+        <div class="card col-12 mx-auto" style="width: 60rem;">
+            <img class="card-img-top" src="<%= @post.image %>" />
+            <div class="card-body">
+                <strong class="card-text"><a target="_blank" href="<%= @post.link %>"><%= @post.url_title %></a></strong>
+                <p><%= @post.description %></p>
+            </div>
+        </div>
             <div>
-                <%= @post.user.username %>
-                <br><%= @post.url_title %> 
+                <%= @post.user.username %> 
                 <br><%= @post.body %>   
             </div>
         <hr />
