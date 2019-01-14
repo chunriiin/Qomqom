@@ -22,21 +22,29 @@
                     <div class="card mx-auto p-0" style="width: 85%;">
                         <div class="card-body p-0" style="display: flex;">
                             <div style="width:40px;background-color: #EEEEEE;"></div>
-                            <img src="<%= p.image %>" />
                             <div class="post-content p-2" style="width: 60%;">
                                 <div class="card-title post-box post-info1" style="display: flex">
                                     <div class="circle m-1"></div>
-                                    <strong class="mt-1"><%= link_to p.community.name, p.community %></strong>
-                                        <span class="mt-1">・</span>
-                                        <span class="mt-1">Posted by</span>
-                                    <a class="mt-1"><%= @user.username %></a>
+                                    <strong class="mt-1 posted-user"><%= link_to p.community.name, p.community %></strong>
+                                    <span class="mt-1">・</span>
+                                    <span class="mt-1 ">Posted by</span>
+                                    <a class="mt-1 posted-user"><%= @user.username %></a>
                                     <a class="mt-1"><%= p.created_at %></a>  
                                 </div>
                                 <div class="card-text text-left">    
-                                    <%= link_to p.title, p %>
-                                    <div><%= p.body.truncate(25) %></div>
+                                    <div class="pb-3"><%= p.body.truncate(25) %></div>
+                                    <div class="url_title p-2">     
+                                        <strong><%= link_to p.url_title, p %></strong>
+                                        <div class="url_des"><%= p.description %></div>
+                                    </div>
+                                    <div class="d-flex card-bottom">
+                                        <strong class="px-2">Comment</strong>
+                                        <strong class="px-2">Shere</strong>
+                                        <strong class="px-2">Save</strong>
+                                    </div>
                                 </div>
-                            </div>                           
+                            </div>
+                            <img class="url_image p-1 mt-2" src="<%= p.image %>" />                           
                         </div>
                 </div>
                     

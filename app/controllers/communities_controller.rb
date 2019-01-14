@@ -11,7 +11,8 @@ class CommunitiesController < ApplicationController
   # GET /communities/1.json
   def show
     @community = Community.find(params[:id]) 
-    @post = Post.new 
+    @post = Post.new
+    @comment = Comment.all
   end
 
   # GET /communities/new
@@ -81,7 +82,11 @@ class CommunitiesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def community_params
-      params.require(:community).permit(:name, :language)
+      params.require(:community).permit(:name, :language, :body)
     end
 end
+
+
+
+
 

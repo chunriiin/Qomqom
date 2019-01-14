@@ -256,6 +256,13 @@ section {
     background-color: #EEEEEE;   
 }
 
+ 
+.url_image img {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 0.25rem;
+}
+
 .url_des{
     font-size: 0.8vw; 
 }
@@ -267,3 +274,59 @@ section {
 .posted-user a{
     color: #888888;
 }
+
+
+//community
+.community-title{
+    background-color:white;
+    background-image: url(https://images.unsplash.com/photo-1506111583091-becfd4bfa05d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80);
+    background-size: cover;
+}
+
+.circle-com {
+    width: 10vh;
+    height:10vh;
+    border: 1px solid #657786;
+    border-radius: 50px;
+    background-image: url(https://images.unsplash.com/photo-1506111583091-becfd4bfa05d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80);
+    background-size: cover;
+ }
+
+ .community-title2{
+    background-color:#EEEEEE;
+
+ }
+
+
+
+ //left-box
+ .left-box{
+    background-color:white;
+    overflow: scroll;
+    max-height: 100vw;
+
+ }
+ .circle-user{
+    width: 10vh;
+    height:10vh;
+    border-radius: 50px;
+    border: 1px solid #657786;
+ }
+
+  //community-userprofile
+  .user-profile{
+    background-color:white;
+ }
+
+ .user-profile a{
+     color:black;
+ }
+
+ .follow-info{
+
+ }
+
+ .follow-text{
+    font-size: 0.8vw;
+    color: #657786; 
+ }

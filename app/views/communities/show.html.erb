@@ -1,75 +1,110 @@
 <html style="min-height: 100vh;">
 <p id="notice"><%= notice %></p>
-<div>
-    <div class="text3" style="height:200px;">
-        <strong><%= @community.name %><br>
-        <%= @community.language %></strong>
-    </div>    
-        
-  
-    <div class="posts-box mt-5"style="display: flex;">
-        <div class="d-lg-inline d-none mr-0 ml-5 p-3 float-right col-2" style="height: 300px; background-color: white;">
-            <%= button_to '参加する', community_join_path(@community), class:"btn btn-outline-danger m-auto" %>
-            <% @community.users.each do |u| %>
-                <div><%= link_to u.username, u %></div>
-            <% end %>
-            <%= link_to 'Edit', edit_community_path(@community) %> |
-            <%= link_to 'Back', communities_path %>   
+<div class="d-flex">
+    <div class="left-box m-0 col-2">
+        <div class="user-profile">
+            <div class="circle-user m-auto"></div>
+            <strong><%= link_to current_user.username, user_path(current_user) %></strong>    
         </div>
-    
-        <div class="text-center" style="width: 90%;">
-            <div class="posts">
-                <% @community.posts.each do |p| %>
-                    <div class="card mx-auto p-0 mb-1" style="width: 85%;">
-                        <div class="card-body p-0" style="display: flex;">
-                            <div style="width:40px;background-color: #EEEEEE;"></div>
-                            <div class="post-content p-2" style="width: 65%;">
-                                <div class="card-title post-box post-info1 m-0" style="display: flex">
-                                    <div class="circle m-1"></div>
-                                        <span class="mt-1">Posted by</span>
-                                    <strong class="pt-1 px-1 posted-user"><%= link_to p.user.username, p.user %></strong>
-                                    <a class="mt-1"><%= p.created_at %></a>  
-                                </div>
-                                <div class="card-text text-left ">
-                                    <div class="pb-3"><%= p.body.truncate(25) %></div>
-                                    <div class="url_title p-2">     
-                                        <strong><%= link_to p.url_title, p %></strong>
-                                        <div class="url_des"><%= p.description %></div>
-                                    </div>
-                                    <div class="d-flex card-bottom">
-                                        <strong class="px-2">Comment</strong>
-                                        <strong class="px-2">Shere</strong>
-                                        <strong class="px-2">Save</strong>
-                                    </div>    
-                                </div>
-                            </div>
-                            <img class="url_image p-1 mt-2" src="<%= p.image %>" />                           
-                        </div>
-                    </div>
-                <% end %>   
+        <hr>
+        <div class="follow-info d-flex">
+            <div class="m-auto">
+                <strong>15</strong>
+                <br><span class="follow-text">フォロー</span>
+            </div>
+            <div class="m-auto">
+                <strong>15</strong>
+                <br><span class="follow-text">フォロワー</span>
             </div>
         </div>
-        
-        <div class="d-lg-inline d-none mr-5 ml-0 p-3 float-right col-2" style="height: 300px;background-color: white;">
-                <%= form_for([@community, @post]) do |f| %>
-                    <div class="form-group">
-                        <label for="title">Title</label>
-                        <%= f.text_field :title, class: "form-control" %>
-                    </div>
-                    <div class="form-group">
-                        <label for="link">Link</label>
-                        <%= f.text_field :link, class: "form-control" %>
-                    </div>
-                    <div class="form-group">
-                        <label for="body">Body</label>
-                        <%= f.text_field :body, class: "form-control" %>
-                    </div>
-                    <div class="form-group"><%= f.submit class: "btn btn-primary",  title: ""%></div>
-                <% end %>
-        </div>        
+        <hr>
+        <div class="comment-info">
+            <% @comment.each do |c| %>
+                <a class="comment-body"><%= c.user.username %></a>
+                <a class="comment-body"><%= c.body %></a>
+            <% end %>
+        </div>
     </div>
+    <div class="">
+        <div class="community-title py-1" style="height:8vh;">
+            <div class="d-flex ml-5">
+                <div class="circle-com"></div>
+                <div class="ml-3">
+                    <strong class="p-0"><%= @community.name %></strong>
+                    <br><a class="p-0"><%= @community.language %></a>
+                </div>
+            </div>
+        </div>
+        <div class="community-title2 m-0" style="height:4vh;">
+        </div>    
+        <div class="posts-box mt-5"style="display: flex;">
+            <div class="text-center" style="width: 90%;">
+                <div>
+                    <div class="card mx-auto p-0 mb-1" style="width: 85%;">
+                        <p>リンクを投稿してみよう</p>
+                        <%= form_for([@community, @post]) do |f| %>
+                            <div class="form-group px-5">
+                                <%= f.text_field :body, class: "form-control" ,placeholder: "コメントする..."%>
+                            </div>
+                            <div class="form-group px-5">
+                                <%= f.text_field :link, class: "form-control" ,placeholder: "URL"%>
+                            </div>                        
+                            <div class="form-group"><%= f.submit class: "btn btn-outline-danger",  title: ""%></div>
+                        <% end %>
+                    </div>
+                </div>
+                <div class="posts">
+                    <% @community.posts.each do |p| %>
+                        <div class="card mx-auto p-0 mb-1" style="width: 85%;">
+                            <div class="card-body p-0" style="display: flex;">
+                                <div style="width:40px;background-color: #EEEEEE;"></div>
+                                <div class="post-content p-2" style="width: 65%;">
+                                    <div class="card-title post-box post-info1 m-0" style="display: flex">
+                                        <div class="circle m-1"></div>
+                                        <strong class="mt-1 posted-user"><%= link_to p.community.name, p.community %></strong>
+                                        <span class="mt-1">・</span>
+                                        <span class="mt-1">Posted by</span>
+                                        <strong class="pt-1 px-1 posted-user"><%= link_to p.user.username, p.user %></strong>
+                                        <a class="mt-1"><%= p.created_at %></a>  
+                                    </div>
+                                    <div class="card-text text-left ">
+                                        <div class="pb-3"><%= p.body.truncate(25) %></div>
+                                        <div class="url_title p-2">     
+                                            <strong><%= link_to p.url_title, p %></strong>
+                                            <div class="url_des"><%= p.description %></div>
+                                        </div>
+                                        <div class="d-flex card-bottom">
+                                            <strong class="px-2">Comment</strong>
+                                            <strong class="px-2">Shere</strong>
+                                            <strong class="px-2">Save</strong>
+                                        </div>    
+                                    </div>
+                                </div>
+                                <img class="url_image p-1 mt-2" src="<%= p.image %>" />                           
+                            </div>
+                        </div>
+                    <% end %>   
+                </div>
+            </div>
+            <div class="card bg-light mb-3 d-lg-inline d-none mr-5 ml-0 float-right col-3 p-0" style="max-height: 20rem;">
+                <div class="card-header">COMMUNITY DETAILS</div>
+                <div class="card-body">
+                    <h4 class="card-title"><%= @community.name %></h4>
+                    <%= @community.body %>
+                    <%= button_to '参加する', community_join_path(@community), class:"btn btn-outline-danger m-auto" %>
+                        <% @community.users.each do |u| %>
+                            <div><%= link_to u.username, u %></div>
+                        <% end %>
+                        <%= link_to 'Edit', edit_community_path(@community) %> |
+                        <%= link_to 'Back', communities_path %>
+                </div>
+            </div>       
+        </div>
+    </div>    
 </div>
 </html>
+
+
 
 
 
