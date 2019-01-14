@@ -6,6 +6,7 @@ class PostsController < ApplicationController
     @thumb = LinkThumbnailer.generate(@post.link)
     @post.image = @thumb.images.first.src.to_s
     @post.description = @thumb.description
+    @post.url_title = @thumb.title
     @post.save
     redirect_to @community
   end
@@ -21,3 +22,5 @@ class PostsController < ApplicationController
     params.require(:post).permit(:body, :title, :link)
   end
 end
+
+
