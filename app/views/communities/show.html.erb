@@ -1,5 +1,6 @@
 <html style="min-height: 100vh;min-width: 100vh;">
 <p id="notice"><%= notice %></p>
+
 <div class="d-flex">
     <div class="left-box d-lg-inline d-none m-0 col-2">
         <div class="left-box-menu-container p-2">
@@ -9,23 +10,22 @@
         </div>
         <hr>    
     </div>
-    <div class="" style="min-height:100vh;">
-        <div class="community-title py-1" style="height:8vh;">
+    <div class="">
+        <div class="community-title py-1" style="height:12vh;">
             <div class="d-flex ml-5">
                 <div class="circle-com"></div>
                 <div class="ml-3">
-                    <strong class="p-0"><%= @community.name %></strong>
-                    <br><a class="p-0"><%= @community.language %></a>
+                    <div class="p-0"><%= @community.name %></div>
+                    <a class="p-0"><%= @community.language %></a>
                 </div>
             </div>
         </div>
-        <div class="community-title py-1" style="height:4vh;">
-        </div>
+
         
         <div class="posts-box mt-5"style="display:flex;">
-            <div class="text-center" style="width: 90%;">
+            <div class="text-center col-12 col-md-8">
                 <div>
-                    <div class="card mx-auto p-0 mb-1" style="width: 85%;">
+                    <div class="card mx-auto p-0 mb-1">
                         <p>リンクを投稿してみよう</p>
                         <%= form_for([@community, @post]) do |f| %>
                             <div class="form-group px-5">
@@ -40,7 +40,7 @@
                 </div>
                 <div class="posts">
                     <% @community.posts.each do |p| %>
-                        <div class="card mx-auto p-0 mb-1" style="width: 85%;">
+                        <div class="card mx-auto p-0 mb-1">
                             <div class="card-body p-0" style="display: flex;">
                                 <div style="width:40px;background-color: #EEEEEE;"></div>
                                 <div class="post-content p-2" style="width: 65%;">
@@ -102,14 +102,18 @@
                         <%= link_to 'Edit', edit_community_path(@community) %> |
                         <%= link_to 'Back', communities_path %>
                 </div>
-            </div>       
+            </div>
         </div>
     </div>    
 </div>
 </html>
 
 
-
+<style>
+.test{
+    background-color: red;
+}
+</style>
 
 
 

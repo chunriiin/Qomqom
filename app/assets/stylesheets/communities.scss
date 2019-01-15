@@ -3,6 +3,24 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+.community-title{
+    font-weight: bold;
+}
+
+.circle-com {
+    width: 10vh;
+    height:10vh;
+    border: 1px solid #657786;
+    border-radius: 50px;
+    background-image: url(https://images.unsplash.com/photo-1506111583091-becfd4bfa05d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80);
+    background-size: cover;
+ }
+
+ .community-title2{
+    background-color:#EEEEEE;
+
+ }
+
 .community-index{
 
 }
