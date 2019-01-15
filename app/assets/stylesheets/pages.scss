@@ -279,8 +279,7 @@ section {
 //community
 .community-title{
     background-color:white;
-    background-image: url(https://images.unsplash.com/photo-1506111583091-becfd4bfa05d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80);
-    background-size: cover;
+    box-shadow:0px 2px 4px -2px gray inset;
 }
 
 .circle-com {
@@ -302,7 +301,7 @@ section {
  //left-box
  .left-box{
     background-color:white;
-    overflow: scroll;
+    overflow-y: scroll;
     max-height: 100vw;
 
  }
@@ -329,4 +328,16 @@ section {
  .follow-text{
     font-size: 0.8vw;
     color: #657786; 
+ }
+
+ .comment-body{
+    font-size: 0.8vw; 
+ }
+
+ .comment-body a{
+    color:black;
+ }
+
+ .comment-info-title{
+    font-size: 0.9vw;
  }
