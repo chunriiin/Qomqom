@@ -22,5 +22,100 @@ img.index-post {
     width: 100%;
 }
 
+.reply-box{
+    background-color: white;
+}
+
+//コメントページ
+.back-community a{
+    color: black;    
+}
+.comment-container{
+    background-color: white;
+}
+.form-control{
+
+}
+
+.post-url_title a{
+    color: black;
+
+}
+@include media-breakpoint-up(md) {
+    .post-url_title a{
+      font-size: 1.2rem;
+    }
+  }
+
+.post-url_description{
+    font-size: 0.8rem;
+
+}
+
+@include media-breakpoint-up(md) {
+    .post-url_description{
+      font-size: 1.0rem;
+    }
+  }
+
+.post-link{
+    text-align: center;
+    color: white;
+    background: black;
+    border-radius: 4px ;
+
+}
+.post-link a{
+    color: white;
+}
+
+.learn-language{
+    font-size: 30% ;
+    color: #657786;
+}
+
+.star-point-1{
+    color: green;
+    font-size: 3px;
+}
+.star-point-2{
+    color: blue;
+    font-size: 3px;
+}
+
+.comment-flex{
+    display: flex;
+}
+
+.comment-box{
+    background-color: #eeeeee;
+    border-radius: 4px ;
+    font-size: 80% ;    
+}
+
+.comment-time{
+    font-size: 30% ;
+    color: #657786;
+}
+
+.comment-body{
+    font-size: 120% ;
+
+}
 
 
+
+.card-bottom a{
+    color: #BBBBBB;
+}
+
+.fix_comment_box{
+    width: 80% ;
+
+}
+
+.fix_comment_body{
+    border-radius: 4px ;
+    font-size: 80% ;
+    border: 1px solid #DDDDDD;
+}
