@@ -227,7 +227,7 @@ section {
 
 //post
 .post-content{
-    width: 50%;
+    width: 80%;
 }
 
 .text-left{
@@ -245,9 +245,18 @@ section {
 
 .url_image{
     border-radius: 0.25rem;
-    background-color: #EEEEEE;   
+    background-color: #EEEEEE;
+    width: 9rem;
+    height: 9rem;
+
 }
 
+@include media-breakpoint-up(md) {
+    .url_image{
+        width: 10rem;
+        height: 10rem;    
+    }
+  }
  
 .url_image img {
     width: 8rem;
@@ -261,7 +270,7 @@ section {
 
 .card-bottom{
     color: #BBBBBB;
-    font-size: 0.9vw;
+    
 }
 .posted-user a{
     color: #888888;

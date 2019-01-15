@@ -1,48 +1,35 @@
 <% if user_signed_in? %>
 <div class="d-flex">
     <div class="left-box d-lg-inline d-none m-0 col-2">
-        <div class="left-box-menu m-1">ホーム</div>
-        <div class="left-box-menu m-1"><%= link_to "コミニティを探す", 'communities', class:"" %></div>
-        <div class="left-box-menu m-1">登録コミニティ</div>
-        <hr> 
-        <strong class="comment-info-title">最新のコメント</strong>
-        <div class="comment-info">
-            <% @comment.each do |c| %>
-                <div class="post-info1 m-0" style="display: flex">
-                    <div class="circle"></div>
-                    <div>
-                        <strong class="mt-1 ml-1 posted-user"><%= link_to c.user.username, c.user %></strong>
-                        <div class="ml-1"><%= c.created_at %></div> 
-                    </div>
-                </div>
-                <div class="comment-body"><%= link_to c.body, c.post %></div>
-                
-                <hr class="m-1">
-            <% end %>
+        <div class="left-box-menu-container p-2">
+            <div class="left-box-menu m-2">ホーム</div>
+            <div class="left-box-menu m-2"><%= link_to "コミニティを探す", 'communities', class:"" %></div>
+            <div class="left-box-menu m-2">登録コミニティ</div>
         </div>
+        <hr> 
     </div>
     <div>      
         <div class="posts-box mt-5" style="display: flex;">
             <div class="row text-center" style="">
-                <div class="container">
-                <div class="low">
+                <div class="container p-0">
+                <div class="row">
                     <% @posts.each do |p| %>
                         <div class="card col-12 col-md-8 mx-auto p-0 mb-1" style="">
-                            <div class="card-body p-0" style="display: flex;">
+                            <div class="" style="display: flex;">
                                 <div style="width:40px;background-color: #EEEEEE;"></div>
-                                <div class="post-content p-2 col-10">
+                                <div class="post-content p-2">
                                     <div class="card-title post-box post-info1" style="display: flex">
                                         <div class="circle m-1"></div>
                                         <strong class="mt-1 posted-user"><%= link_to p.community.name, p.community %></strong>
                                         <span class="mt-1">・</span>
                                         <span class="mt-1">Posted by</span>
                                         <strong class="mt-1 px-1 posted-user"><%= link_to p.user.username, p.user %></strong>
-                                        <a class="mt-1"><%= p.created_at %></a> 
+                                        <a class="mt-1 d-lg-inline d-none"><%= p.created_at %></a> 
                                     </div>
                                     <div class="card-text text-left">    
                                         <div class="pb-3"><%= p.body.truncate(25) %></div>
                                         <div class="d-lg-flex flex-row-reverse">
-                                            <img class="url_image p-1 mt-2 ml-5" style="width: 8rem;height: 8rem;border-radius: 0.25rem;" src="<%= p.image %>" />
+                                            <img class="url_image p-1 m-3" src="<%= p.image %>" />
                                             <div class="url_title p-2">     
                                                 <strong><%= link_to p.url_title, p %></strong>
                                                 <div class="url_des"><%= p.description %></div>
@@ -142,14 +129,9 @@
     width:50% ;
 }
 
-.post-image {
-        height: 150px;
-        width: 150px;
-}
 
-.post-content{
-    width: 50% ;
-}
+
+
 
             
 </style>

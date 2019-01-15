@@ -1,38 +1,13 @@
 <html style="min-height: 100vh;min-width: 100vh;">
 <p id="notice"><%= notice %></p>
-<div class="d-flex" >
+<div class="d-flex">
     <div class="left-box d-lg-inline d-none m-0 col-2">
-        <div class="user-profile">
-            <div class="circle-user m-auto"></div>
-            <strong><%= link_to current_user.username, user_path(current_user) %></strong>    
+        <div class="left-box-menu-container p-2">
+            <div class="left-box-menu m-2">ホーム</div>
+            <div class="left-box-menu m-2"><%= link_to "コミニティを探す", 'communities', class:"" %></div>
+            <div class="left-box-menu m-2">登録コミニティ</div>
         </div>
-        <hr>
-        <div class="follow-info d-flex">
-            <div class="m-auto">
-                <strong>15</strong>
-                <br><span class="follow-text">フォロー</span>
-            </div>
-            <div class="m-auto">
-                <strong>15</strong>
-                <br><span class="follow-text">フォロワー</span>
-            </div>
-        </div>
-        <hr>
-        <strong class="comment-info-title">最新のコメント</strong>
-        <div class="comment-info">
-            <% @comment.each do |c| %>
-                <div class="post-info1 m-0" style="display: flex">
-                    <div class="circle"></div>
-                    <div>
-                        <strong class="mt-1 ml-1 posted-user"><%= link_to c.user.username, c.user %></strong>
-                        <div class="ml-1"><%= c.created_at %></div> 
-                    </div>
-                </div>
-                <div class="comment-body"><%= link_to c.body, c.post %></div>
-                
-                <hr class="m-1">
-            <% end %>
-        </div>
+        <hr>    
     </div>
     <div class="" style="min-height:100vh;">
         <div class="community-title py-1" style="height:8vh;">
@@ -46,7 +21,7 @@
         </div>
         <div class="community-title py-1" style="height:4vh;">
         </div>
-          
+        
         <div class="posts-box mt-5"style="display:flex;">
             <div class="text-center" style="width: 90%;">
                 <div>
