@@ -5,7 +5,7 @@
 
 //post
 .post-info1{
-    font-size: 0.5rem;
+    font-size: 1.0rem;
     color: #657786;
 }
 
@@ -27,13 +27,7 @@
     border: 1px solid #657786;
     border-radius: 50px;
  }
-.posts {
-    img {
-        width: 8rem;
-        height: 8rem;
-        border-radius: 0.25rem;
-    }
-}
+
 
 .post {
     img {
@@ -74,9 +68,15 @@ img.index-post {
   }
 
 .post-url_description{
-    font-size: 0.8rem;
+    font-size: 1.0rem;
 
 }
+
+@include media-breakpoint-up(md) {
+    .post-url_description{
+      font-size: 0.8rem;
+    }
+  }
 
 @include media-breakpoint-up(md) {
     .post-url_description{
