@@ -74,12 +74,6 @@ img.index-post {
 
 @include media-breakpoint-up(md) {
     .post-url_description{
-      font-size: 0.8rem;
-    }
-  }
-
-@include media-breakpoint-up(md) {
-    .post-url_description{
       font-size: 1.0rem;
     }
   }
@@ -96,17 +90,36 @@ img.index-post {
 }
 
 .learn-language{
-    font-size: 30% ;
+    font-size: 1.0rem ;
     color: #657786;
+}
+
+@include media-breakpoint-up(md){
+    .learn-language{
+        font-size: 0.5rem ;
+    } 
 }
 
 .star-point-1{
     color: green;
-    font-size: 3px;
+    font-size: 1.0rem;
 }
+
+@include media-breakpoint-up(md){
+    .star-point-1{
+        font-size: 0.5rem ;
+    } 
+}
+
 .star-point-2{
     color: blue;
-    font-size: 3px;
+    font-size: 1.0rem;
+}
+
+@include media-breakpoint-up(md){
+    .star-point-2{
+        font-size: 0.5rem ;
+    } 
 }
 
 .comment-flex{
@@ -116,17 +129,28 @@ img.index-post {
 .comment-box{
     background-color: #eeeeee;
     border-radius: 4px ;
-    font-size: 80% ;    
+    font-size:1.2rem;   
 }
+@include media-breakpoint-up(md) {
+    .comment-box{
+      font-size: 0.8rem;
+    }
+  }
+
 
 .comment-time{
-    font-size: 30% ;
+    font-size: 0.8rem ;
     color: #657786;
+}
+
+@include media-breakpoint-up(md){
+    .comment-time{
+        font-size: 0.5rem ;
+    }
 }
 
 .comment-body{
     font-size: 120% ;
-
 }
 
 
