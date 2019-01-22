@@ -225,6 +225,7 @@ section {
 .url_title{
     border: 1px solid #EEEEEE;
     border-radius: 0.25rem;
+    width:80rem;
 }
 
 .url_image{
@@ -250,11 +251,12 @@ section {
 }
 
 .url_des{
-
+    word-wrap: break-word;
 }
 @include media-breakpoint-up(md) {
     .url_des{
         font-size: 0.8rem;
+        word-wrap: break-word;
     }
   }
 

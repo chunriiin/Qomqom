@@ -27,14 +27,14 @@
             </div>
             <div class="comment-container mx-auto p-2">
                 <div class="comment-flex">
-                    <div class="circle my-3 ml-3">
+                    <div class="my-3 ml-3">
                     <% if @post.user.image.attached? %>
                         <%= image_tag @post.user.image, class:'profile-image', :size =>'50x50'%>
                     <% end %>
                     </div>
                     <div class="card-body p-2">
                         <div class="comment-box p-2">
-                            <strong><%= @post.user.username %></strong>
+                            <strong><%= link_to @post.user.username, @post.user %></strong>
                             <a class="comment-time"><%= @post.created_at %></a>
                             <div class="learn-language d-flex">
                                 <div class="">
@@ -56,10 +56,13 @@
             <% @post.comments.each do |c| %>
                 <div class="comment-container mx-auto p-2">
                     <div class="comment-flex">
-                        <div class="circle my-3 ml-3"></div>
+                        <div class=" my-3 ml-3"></div>
+                            <% if @post.user.image.attached? %>
+                            <%= image_tag c.user.image, class:'profile-image', :size =>'50x50'%>
+                            <% end %>
                         <div class="card-body p-2">
                             <div class="comment-box p-2">
-                                <strong><%= c.user.username %></strong>
+                                <strong><%= link_to c.user.username, c.user %></strong>
                                 <a class="comment-time"><%= c.created_at %></a>
                                 <div class="learn-language d-flex">
                                     <div class="">
