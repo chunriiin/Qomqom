@@ -22,6 +22,8 @@
         <%= f.email_field :email, autocomplete: "" %>
       </div>
 
+      <div class="form-group"><%= f.file_field :image, class: "form-control form-control-white" %></div>
+
       <div class="field">
       <label for="password">パスワード</label><br />
         <% if @minimum_password_length %>

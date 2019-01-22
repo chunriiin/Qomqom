@@ -7,4 +7,5 @@ class User < ApplicationRecord
   has_many :communities, through: :communities_users
   has_many :posts
   has_many :comments
+  has_one_attached :image  
 end

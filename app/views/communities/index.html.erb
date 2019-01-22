@@ -11,7 +11,7 @@
         <% @communities.each do |community| %>
           <div class="col-12 col-md-3" style="width: 18rem; padding: 10px 20px;">
             <div class="card community-card">
-              <img class="card-img-top" src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2689&q=80" alt="Card image cap">
+              <%= image_tag community.image, class: "card-img-top" %>
               <div class="card-body">
                 <h6 class="card-title"><%= link_to community.name, community %>/<%= link_to community.language, community %></h6>
                 <p class="card-text"><%= community.body %></p>
