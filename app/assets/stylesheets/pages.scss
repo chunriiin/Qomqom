@@ -21,10 +21,6 @@
     margin-bottom: auto!important;
 }
 
-.d-flex {
-    display: -ms-flexbox!important;
-    display: flex!important;
-}
 
 
 header.masthead {
@@ -36,10 +32,6 @@ header.masthead {
     background-size: cover;
 }
 
-div {
-    display: block;
-    
-}
 
 
 .text-center {
@@ -219,7 +211,7 @@ section {
 
 //post
 .post-content{
-    width: 80%;
+    width: 90%;
 }
 
 .text-left{
@@ -240,13 +232,14 @@ section {
     background-color: #EEEEEE;
     width: 9rem;
     height: 9rem;
-
+    object-fit: cover;
 }
 
 @include media-breakpoint-up(md) {
     .url_image{
         width: 10rem;
-        height: 10rem;    
+        height: 10rem; 
+        object-fit: cover;   
     }
   }
  
@@ -328,4 +321,10 @@ section {
 
  .comment-info-title{
     font-size: 0.9vw;
+ }
+
+ footer{
+    min-width: 100vh;
+    background-color: black !important;
+    opacity: 0.8;
  }

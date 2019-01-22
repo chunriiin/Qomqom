@@ -27,7 +27,11 @@
             </div>
             <div class="comment-container mx-auto p-2">
                 <div class="comment-flex">
-                    <div class="circle my-3 ml-3"></div>
+                    <div class="circle my-3 ml-3">
+                    <% if @post.user.image.attached? %>
+                        <%= image_tag @post.user.image, class:'profile-image', :size =>'50x50'%>
+                    <% end %>
+                    </div>
                     <div class="card-body p-2">
                         <div class="comment-box p-2">
                             <strong><%= @post.user.username %></strong>

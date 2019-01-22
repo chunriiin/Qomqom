@@ -15,45 +15,48 @@
   <body class="bg-light">
 
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <nav class="sticky-top navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href='/'>Qomqom</a>
-    <div>
-      <button type="button" class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#Navbar" aria-controls="Navbar" aria-expanded="true" aria-label="レスポンシブ・ナビゲーションバー">
-        <span class="navbar-toggler-icon"></span>
-      </button> 
-    </div>
-  </div>
-  <div class="collapse navbar-collapse" id="Navbar">
-    
-    <ul class="nav navbar-nav navbar-nav mr-auto mt-2 ml-sm-auto"> 
-      <li class="nav-item active">
-        <% if user_signed_in? %>
-        <%= link_to('ログアウト', destroy_user_session_path, :method => :delete,class:"btn btn-outline-danger my-2 my-sm-0")%>
-        <% else %>
-        <li class="nav-item active"><%= link_to "会員登録", new_user_registration_path,class:"btn btn-outline-danger my-2 my-sm-0" %></li>
-        <%= link_to('サインイン', new_user_session_path,class:"btn btn-outline-danger my-2 my-sm-0") %>
-        <% end %>
+  <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#Navber" aria-controls="Navber" aria-expanded="false" aria-label="ナビゲーションの切替">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="Navber">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="#"></a>
       </li>
-      <li>
-      
+      <li class="nav-item dropdown">
+        <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          HOME
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <%= link_to "コミュニティーを探す", 'communities', class:"dropdown-item"  %>
+          <a class="dropdown-item" href="#">その他</a>
+          <div class="dropdown-divider"></div>
+          <% if user_signed_in? %>
+            <%= link_to('ログアウト', destroy_user_session_path, :method => :delete,class:"dropdown-item")%>
+          <% end %>
+        </div>
       </li>
     </ul>
-    <% if user_signed_in? %>
-      <div class="form-inline">
-        
-        <%= link_to current_user.username, user_path(current_user), class:"nav-link" %>
-        <% if current_user.image.attached? %>
-          <%= image_tag current_user.image, class:'profile-image img-fluid float-left', :size =>'50x50'%>
-        <% end %>
-        
-      </div>
-    <% end %> 
-  </div>
-  
+    <div class="my-2 my-lg-0">
+      <% if user_signed_in? %>
+        <div class="form-inline">
+          <%= link_to current_user.username, user_path(current_user), class:"nav-link" %>
+          <% if current_user.image.attached? %>
+            <%= image_tag current_user.image, class:'profile-image img-fluid float-left', :size =>'50x50'%>
+          <% end %>
+          <% else %>
+            <div class="d-flex">
+              <div class="nav-item active mx-2"><%= link_to "会員登録", new_user_registration_path,class:"btn btn-outline-danger my-2 my-sm-0" %></div>
+              <div class="nav-item active mx-2"><%= link_to('サインイン', new_user_session_path,class:"btn btn-outline-danger my-2 my-sm-0") %></div>
+            </div>
+        </div>
+      <% end %>  
+    </div>
+  </div><!-- /.navbar-collapse -->
 </nav>
-<div style="margin: auto;">
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
 
     <%= yield %>
 
@@ -63,11 +66,32 @@
   </div>
 </footer>
 
-  </body>
+</body>
 </html>
 
 <style>
-.bg-dark {
-    background-color: #000 !important;
+.navbar{
+  background-color: black !important;
+  opacity: 0.8;
+  min-width: 100vh;
 }
+.navbar-light .navbar-brand{
+  color: white;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: red;
+}
+.navbar-brand a{
+  color: white;
+}
+
+.navbar-light .navbar-toggler{
+  background-color: white;
+  border: 1px solid white;
+}
+
+
+
+
 </style>
