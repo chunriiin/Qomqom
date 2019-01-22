@@ -42,7 +42,9 @@
       <div class="form-inline">
         
         <%= link_to current_user.username, user_path(current_user), class:"nav-link" %>
-        <%= image_tag 'testimonial_22-190x190.jpg',class:'profile-image img-fluid float-left', :size =>'50x50'%>
+        <% if current_user.image.attached? %>
+          <%= image_tag current_user.image, class:'profile-image img-fluid float-left', :size =>'50x50'%>
+        <% end %>
         
       </div>
     <% end %> 

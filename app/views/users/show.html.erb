@@ -1,7 +1,7 @@
 <div class="">
     <div class="community-title py-1" style="height:12vh;">
         <div class="d-flex">
-        <% if @user.image != nil %>
+        <% if @user.image.attached? %>
         <%= image_tag @user.image, class:'profile-image', :size =>'50x50'%>
         <% end %>
             <div class="ml-3">
