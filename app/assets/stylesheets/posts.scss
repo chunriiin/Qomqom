@@ -4,6 +4,11 @@
 
 
 //post
+.posts-image-top{
+    height: 40vh;
+    object-fit: cover; 
+}
+
 .post-info1{
     font-size: 1.0rem;
     color: #657786;
@@ -44,9 +49,6 @@ img.index-post {
 }
 .comment-container{
     background-color: white;
-}
-.form-control{
-
 }
 
 .post-url_title a{

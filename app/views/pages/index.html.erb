@@ -1,6 +1,6 @@
 <% if user_signed_in? %>
 <body>      
-    <div class="posts-box mt-5 d-flex">
+    <div class="posts-box mx-auto mt-5 d-flex">
         <div class="row text-center">
             <div class="container p-0">
             <div class="row">
@@ -11,8 +11,8 @@
                             <div class="post-content p-2">
                                 <div class="card-title post-box post-info1 d-flex">
                                     <div class="">
-                                        <% if p.user.image.attached? %>
-                                            <%= image_tag p.user.image, class:'profile-image', :size =>'50x50'%>
+                                        <% if p.community.image.attached? %>
+                                            <%= image_tag p.community.image, class:'profile-image', :size =>'50x50'%>
                                         <% end %>
                                     </div>
                                     <strong class="mt-1 posted-user"><%= link_to p.community.name, p.community %></strong>
@@ -132,6 +132,8 @@
 
             
 </style>
+
+
 
 
 

@@ -5,6 +5,30 @@
 
 
 // img
+
+
+.user-show-top{
+    height: 20vh;
+    object-fit: cover; 
+    margin: auto;
+}
+
+.user-title{
+    font-weight: bold;
+    background-color: white;
+    font-size: 1.2rem;
+    min-width: 100vh;
+}
+
+.user-show-bg{
+    height: 20vh;
+    width: 75%;
+    background-color:wheat;
+    background-image: url("http://www.line-tatsujin.com/stamp/outline/a02957-0.png")
+}
+.user-title-box{
+    width: 65%
+}
 .float-left {
     float: left;
 }

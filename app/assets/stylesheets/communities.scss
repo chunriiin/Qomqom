@@ -3,10 +3,32 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+
+
+
+.community-show-image{
+    height: 20vh;
+    width: 75%;
+    object-fit: cover; 
+    margin: auto;
+
+}
+
+.community-join{
+    height: 5vh;
+    background-color: white;
+    min-width: 100vh;
+
+}
 .community-title{
     font-weight: bold;
     background-color: white;
     font-size: 1.2rem;
+    min-width: 100vh;
+}
+
+.community-title-box{
+    width: 65%
 }
 
 .circle-com {
@@ -23,9 +45,9 @@
 
  }
 
-.card-img-top{
-    height: 150px;
+.community-card-img-top{
     object-fit: cover;
+    height: 150px;
 }
 
 .community-index{
@@ -40,8 +62,8 @@
     color: black;
 }
 
-.card-text{
-    font-size: 0.5vw;
+.community-body{
+    font-size: 0.8vw;
 }
 
 .card-title-communityname{
@@ -53,4 +75,32 @@
     border-radius:0px;
     min-height:300px;
     max-height: 300px;
+}
+
+.posts-box{
+    width: 80%;
+    min-height: 100vh;
+}
+
+.btn-create-post{
+    background-color: #212529;
+    color: white;
+    border-radius: 4px ;
+    text-align: center;
+}
+
+.url_des{
+    word-wrap: break-word;
+}
+
+.url_title{
+    border: 1px solid #EEEEEE;
+    border-radius: 0.25rem;
+    width:20rem;
+}
+
+//community-details
+.community-details{
+    background-color: white;
+
 }

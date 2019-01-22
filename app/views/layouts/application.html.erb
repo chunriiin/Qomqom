@@ -45,7 +45,7 @@
         <div class="form-inline">
           <%= link_to current_user.username, user_path(current_user), class:"nav-link" %>
           <% if current_user.image.attached? %>
-            <%= image_tag current_user.image, class:'profile-image img-fluid float-left', :size =>'50x50'%>
+            <%= image_tag current_user.image, class:'profile-image', :size =>'40x40'%>
           <% end %>
           <% else %>
             <div class="d-flex">

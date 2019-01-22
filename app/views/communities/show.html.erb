@@ -1,17 +1,24 @@
 <html>
 <div class="">
-    <div class="community-title py-1" style="height:12vh;">
-        <div class="d-flex ml-5">
-            <div class="circle-com"></div>
-            <div class="ml-3">
-                <div class="p-0"><%= @community.name %></div>
-                <a class="p-0"><%= @community.language %></a>
+    <div class="community-show-top d-flex">
+    <%= image_tag @community.image, class:'community-show-image p-0 mx-auto'%>
+    </div>
+    <div class="community-title py-1" style="height:10vh;">
+        <div class="community-title-box d-flex mx-auto">
+            <div class="">
+                <% if @community.image.attached? %>
+                <%= image_tag @community.image, class:'profile-image p-1', :size =>'80x80'%>
+                <% end %>
+            </div>
+            <div class="ml-3 mt-4 d-flex">
+                <div class="p-0"><%= @community.name %>/</div>
+                <%= @community.language %><%= button_to '参加する', community_join_path(@community), class:"btn btn-outline-danger ml-5" %>
             </div>
         </div>
     </div>
 
     
-    <div class="posts-box mt-5"style="display:flex;">
+    <div class="posts-box mt-5 mx-auto"style="display:flex;">
         <div class="text-center col-12 col-md-8">
             <div>
                 <div class="card mx-auto p-0 mb-1">
@@ -23,7 +30,7 @@
                         <div class="form-group px-5">
                             <%= f.text_field :link, class: "form-control" ,placeholder: "URL"%>
                         </div>                        
-                        <div class="form-group"><%= f.submit class: "btn btn-outline-danger",  title: ""%></div>
+                        <div class="form-group"><%= f.submit class: "btn btn-create-post px-5",  title: ""%></div>
                     <% end %>
                 </div>
             </div>
@@ -34,7 +41,7 @@
                             <div style="width:40px;background-color: #EEEEEE;"></div>
                             <div class="post-content p-2 col-10">
                                 <div class="card-title post-box post-info1 d-flex m-0">
-                                    <div class="circle m-1">
+                                    <div class="m-1">
                                         <% if p.user.image.attached? %>
                                             <%= image_tag p.user.image, class:'profile-image', :size =>'50x50'%>
                                         <% end %>
@@ -51,7 +58,7 @@
                                             <div class="url_des"><%= p.description %></div>
                                         </div>
                                         <div class="d-flex card-bottom">
-                                            <strong class="px-2">Comment</strong>
+                                            <strong class="px-2"><%= link_to "Comment", p %></strong>
                                             <strong class="px-2">Shere</strong>
                                             <strong class="px-2">Save</strong>
                                         </div>    
@@ -74,7 +81,7 @@
 
                                     </div>
                                     <div class="d-flex card-bottom">
-                                        <strong class="px-2">Comment</strong>
+                                        <strong class="px-2"><%= link_to "Comment", p %></strong>
                                         <strong class="px-2">Shere</strong>
                                         <strong class="px-2">Save</strong>
                                     </div>    
@@ -85,17 +92,38 @@
                 <% end %>
             </div>
         </div>
-        <div class="card bg-light mb-3 d-lg-inline d-none mr-5 ml-0 float-right col-3 p-0" style="max-height: 20rem;">
+        <div class="card bg-light mb-3 d-lg-inline d-none mr-5 ml-0 float-right col-3 p-0">
             <div class="card-header">COMMUNITY DETAILS</div>
-            <div class="card-body">
+            <div class="card-body community-details">
                 <h4 class="card-title"><%= @community.name %></h4>
+                使用する言語：<h6><%= @community.language %></h6>
+                <div class="community-counter d-flex">
+                    <div>
+                        <strong>29</strong>
+                        <div>Subscribers</div>
+                    </div>
+                    <div>
+                    ｜
+                    </div>
+                    <div>
+                        <strong>30</strong>
+                        <div>Online</div>
+                    </div>
+                </div>
                 <%= @community.body %>
-                <%= button_to '参加する', community_join_path(@community), class:"btn btn-outline-danger m-auto" %>
-                    <% @community.users.each do |u| %>
-                        <div><%= link_to u.username, u %></div>
-                    <% end %>
-                    <%= link_to 'Edit', edit_community_path(@community) %> |
-                    <%= link_to 'Back', communities_path %>
+                <hr>
+                    <div>
+                    <div>参加メンバー</div>
+                        <% @community.users.each do |u| %>
+                            <%= image_tag u.image, class:'profile-image', :size =>'50x50'%>
+                            <%= link_to u.username, u %>    
+                        <% end %>
+                    </div>
+                <div>
+                <hr>
+                <%= link_to 'Edit', edit_community_path(@community) %> |
+                <%= link_to 'Back', communities_path %>
+                </div>
             </div>
         </div>
     </div>
