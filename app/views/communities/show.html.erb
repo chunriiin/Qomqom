@@ -45,7 +45,11 @@
                                 <div style="width:40px;background-color: #EEEEEE;"></div>
                                 <div class="post-content p-2 col-10">
                                     <div class="card-title post-box post-info1 d-flex m-0">
-                                        <div class="circle m-1"></div>
+                                        <div class="circle m-1">
+                                            <% if p.user.image.attached? %>
+                                                <%= image_tag p.user.image, class:'profile-image', :size =>'50x50'%>
+                                            <% end %>
+                                        </div>
                                         <span class="mt-1">Posted by</span>
                                         <strong class="pt-1 px-1 posted-user"><%= link_to p.user.username, p.user %></strong>
                                         <a class="mt-1"><%= p.created_at %></a>  

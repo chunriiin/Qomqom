@@ -19,7 +19,11 @@
                                 <div style="width:40px;background-color: #EEEEEE;"></div>
                                 <div class="post-content p-2">
                                     <div class="card-title post-box post-info1" style="display: flex">
-                                        <div class="circle m-1"></div>
+                                        <div class="circle m-1">
+                                            <% if p.user.image.attached? %>
+                                                <%= image_tag p.user.image, class:'profile-image', :size =>'50x50'%>
+                                            <% end %>
+                                        </div>
                                         <strong class="mt-1 posted-user"><%= link_to p.community.name, p.community %></strong>
                                         <span class="mt-1">・</span>
                                         <span class="mt-1">Posted by</span>

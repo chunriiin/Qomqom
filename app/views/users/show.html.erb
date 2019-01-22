@@ -26,7 +26,9 @@
                                     <div style="width:40px;background-color: #EEEEEE;"></div>
                                     <div class="post-content p-2">
                                         <div class="card-title d-flex post-box post-info1">
-                                            <%= image_tag 'testimonial_22-190x190.jpg',class:'profile-image', :size =>'50x50'%>
+                                            <% if @user.image.attached? %>
+                                                <%= image_tag @user.image, class:'profile-image', :size =>'50x50'%>
+                                            <% end %>
                                             <strong class="mt-1 posted-user"><%= link_to p.community.name, p.community %></strong>
                                             <span class="mt-1">・</span>
                                             <span class="mt-1 ">Posted by</span>
