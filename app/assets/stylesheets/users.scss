@@ -17,18 +17,26 @@
     font-weight: bold;
     background-color: white;
     font-size: 1.2rem;
-    min-width: 100vh;
+    
 }
 
 .user-show-bg{
     height: 20vh;
-    width: 75%;
+    width: 100%;
     background-color:wheat;
-    background-image: url("https://images.unsplash.com/photo-1444084316824-dc26d6657664?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60")
-
+    background-image: url("https://images.unsplash.com/photo-1444084316824-dc26d6657664?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60");
+    background-repeat: none;
+    background-size: cover;
 }
+
+.user-show-top-container{
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
+    width: 75%;
+}
+
 .user-title-box{
-    width: 65%
+    width: 100%;
 }
 .float-left {
     float: left;
@@ -66,3 +74,20 @@ img {
 .posts{
     min-height: 100vh;
 }
+
+//user-details
+.card_user_details{
+    max-height: 500px;
+}
+
+.card-header-user{
+    font-weight: bold;
+    color: #BBBBBB;
+}
+.user-details-language{
+    color: gray;
+    font-size: 0.8rem;
+    
+
+}
+

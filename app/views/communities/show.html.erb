@@ -8,7 +8,7 @@
             <div class="community-title-box d-flex mx-auto">
                 <div class="">
                     <% if @community.image.attached? %>
-                    <%= image_tag @community.image, class:'profile-image p-1', :size =>'80x80'%>
+                    <%= image_tag @community.image, class:'profile-image p-2 ml-3', :size =>'80x80'%>
                     <% end %>
                 </div>
                 <div class="ml-3 mt-4 d-flex">
@@ -88,7 +88,7 @@
                 <% end %>
             </div>
         </div>
-        <div class="card bg-light mb-3 d-lg-inline d-none mr-5 ml-0 float-right col-3 p-0">
+        <div class="card card_community_details bg-light mb-3 d-lg-inline d-none mr-5 ml-0 float-right col-3 p-0">
             <div class="card-header card-header-community">COMMUNITY DETAILS</div>
             <div class="card-body community-details">
                 <h4 class="card-title m-0 "><%= @community.name %></h4>
