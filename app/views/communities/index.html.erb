@@ -11,16 +11,19 @@
           <div class="col-12 col-md-3" style="width: 18rem; padding: 10px 20px;">
             <div class="card community-card">
               <% if community.image.attached? %>
-                <%= image_tag community.image, class: "community-card-img-top" %>
+                <%= image_tag community.bg_image, class: "community-card-img-top" %>
               <% end %>
               <div class="card-body">
                 <div class="d-flex">
                   <% if community.image.attached? %>
-                      <%= image_tag community.image, class:'profile-image p-1', :size =>'50x50'%>
+                      <%= image_tag community.image, class:'profile-image mr-2', :size =>'50x50'%>
                   <% end %>
-                  <h6 class="card-title"><%= link_to community.name, community,class:"card-title-communityname" %>/<%= community.language %></h6>
+                  <div class="ml-1 mt-2">
+                  <h6 class="card-title m-0 card-title-communityname"><%= link_to community.name, community %></h6>
+                  <h6 class="card-title m-0 card-title-communitylanguage"><%= community.language %></h6>
+                  </div>
                 </div>
-                <p class="card-text community-body "><%= community.body %></p>
+                <p class="card-text community-body"><%= community.body %></p>
               </div>
             </div>
           </div>

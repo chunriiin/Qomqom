@@ -15,15 +15,18 @@
             </div>
         </div>
 
-        <div class="col-12 col-lg-6 mx-auto mt-5">
+        <div class="col-12 col-lg-6 mx-auto mt-5 p-0  reply-box-container">
             <div class="reply-box mx-auto p-3">
                 <%= form_for([@post, @comment]) do |f| %>
                     <div class="form-group">
                         <%= f.text_field :body, class: "form-control", placeholder: "コメントする..." %>
                     </div>
-                    <div class="form-group"><%= f.submit class: "btn btn-outline-danger",  title: ""%></div>
+                    <div class="text-center form-group mx-auto submit-comment p-0"><%= f.submit "投稿する", class: "btn btn-danger",  title: ""%></div>
                 <% end %>  
             </div>
+        </div>
+
+        <div class="col-12 col-lg-6 mx-auto mt-1  p-0 comment-container-line">
             <div class="comment-container mx-auto p-2">
                 <div class="comment-flex">
                     <div class="my-3 ml-3">
@@ -33,7 +36,8 @@
                     </div>
                     <div class="card-body p-2">
                         <div class="comment-box p-2">
-                            <strong><%= link_to @post.user.username, @post.user %></strong>
+                            <span class="mt-1">Posted by</span>
+                            <strong class=""><%= link_to @post.user.username, @post.user %></strong>
                             <a class="comment-time"><%= @post.created_at %></a>
                             <div class="learn-language d-flex">
                                 <div class="">
@@ -46,7 +50,7 @@
                                     <br><strong class="star-point-2">★</strong>
                                 </div>
                             </div>
-                            <br><a class="comment-body"><%= @post.body %></a>
+                            <br><div class="comment-body p-2"><%= @post.body %></div>
                         </div>
                     </div>
                 </div>
@@ -60,7 +64,8 @@
                             <%= image_tag c.user.image, class:'profile-image', :size =>'50x50'%>
                             <% end %>
                         <div class="card-body p-2">
-                            <div class="comment-box p-2">
+                            <div class="comment-box p-1 pt-0">
+                                <span class="mt-1">Posted by</span>
                                 <strong><%= link_to c.user.username, c.user %></strong>
                                 <a class="comment-time"><%= c.created_at %></a>
                                 <div class="learn-language d-flex">
@@ -74,18 +79,21 @@
                                         <br><strong class="star-point-2">★</strong>
                                     </div>
                                 </div>
-                                <br><a class="comment-body"><%= c.body %></a>
+                                <br><div class="comment-body p-2"><%= c.body %></div>
+                                <div class="d-flex card-bottom">
+                                    <strong class="px-2"><%= link_to "添削する", new_comment_fix_comment_path(c) %></strong>
+                                    <strong class="px-2">いいね</strong>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="d-flex card-bottom ml-5">
-                        <strong class="px-2"><%= link_to "添削する", new_comment_fix_comment_path(c) %></strong>
-                        <strong class="px-2">いいね</strong>
                     </div>
                     <div class="fix_comment_box ml-auto p-3">
                         <% c.fix_comments.each do |fc| %>
                             <div class="fix_comment_body m-3 p-1">
-                                Fix by: <%= link_to fc.user.username, fc.user %><a class="comment-time"><%= fc.created_at %></a><br />
+                                <div class="d-flex">
+                                    <div class="fix_by_user">Fix by<%= link_to fc.user.username, fc.user ,class:"mx-1" %></div>
+                                    <div class="comment-time"><%= fc.created_at %></div>
+                                </div>
                                 <%= fc.body %>
                             </div>
                         <% end %>
@@ -98,14 +106,5 @@
     </div>
 </div>
 </html>
-
-<style>
-
-
-
-
-
-
-</style>
 
 

@@ -19,3 +19,5 @@ class FixCommentsController < ApplicationController
     params.require(:fix_comment).permit(:body)
   end
 end
+
+

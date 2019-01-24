@@ -1,43 +1,87 @@
-<html style="height: 100%;">
-<div class="d-flex" style="flex-direction: column;min-height: 100vh;">
-    <div class="">
-        <div class="card mx-auto mt-5" style="width: 60%;">
-            <div class="comment-flex">
-                <div class="circle my-3 ml-3"></div>
-                <div class="card-body p-2">
-                    <div class="comment-box p-2">
-                    <a class="comment-time"><%= @comment.created_at %></a>
-                    <%= @comment.body %>
+<html>
+<div class="card card-fix_comments mx-auto mt-3 p-1 mb-1">
+    <div class="post-content p-2 col-10">
+        <div class="card-title post-box post-info1 d-flex m-0">
+            <div class="m-1">
+                <% if @fix_comment.comment.post.user.image.attached? %>
+                    <%= image_tag @fix_comment.comment.post.user.image, class:'profile-image', :size =>'50x50'%>
+                <% end %>
+            </div>
+            <span class="mt-1">Posted by</span>
+            <strong class="pt-1 px-1 posted-user"><%= link_to @fix_comment.comment.post.user.username, @fix_comment.comment.post.user %></strong>
+            <a class="mt-1"><%= @fix_comment.comment.post.created_at %></a>  
+        </div>
+        <div class="card-text text-left m-3">
+            <div class="pb-3"><%= @fix_comment.comment.post.body.truncate(25) %></div>
+            <div class="d-flex">
+                <div>
+                    <div class="url_title p-2">     
+                        <strong><%= link_to @fix_comment.comment.post.url_title, @fix_comment.comment.post %></strong>
+                        <div class="url_des"><%= @fix_comment.comment.post.description %></div>
                     </div>
                 </div>
+                <div>
+                    <img class="url_image p-1 ml-5" src="<%= @fix_comment.comment.post.image %>" /> 
+                </div>
             </div>
+            <div class="d-flex card-bottom mt-2">
+                <strong class="px-2"><%= link_to "コメント", @fix_comment.comment.post %><span class="comment-count m-1 px-1"><%= @fix_comment.comment.post.comments.count %></strong>
+                <strong class="px-2">共有</strong>
+                <strong class="px-2">保存</strong>
+            </div>    
+        </div>
+    </div>                          
+</div>
+<div class="fix_comment_box_title mx-auto">
+    <div class="mt-3">添削するコメント</div>
+</div>
+<div class="mx-auto mt-1  p-0 fix_comment-container-line">
+    <div class="fix_comment-container mx-auto p-2">
+        <div class="comment-flex">
+            <div class="my-3 ml-3">
+            <% if @fix_comment.comment.user.image.attached? %>
+                <%= image_tag @fix_comment.comment.user.image, class:'profile-image', :size =>'50x50'%>
+            <% end %>
+            </div>
+            <div class="card-body p-2">
+                <div class="comment-box p-2">
+                    <span class="mt-1">Posted by</span>
+                    <strong class=""><%= link_to @fix_comment.comment.user.username, @fix_comment.comment.user %></strong>
+                    <a class="comment-time"><%= @fix_comment.comment.created_at %></a>
+                    <div class="learn-language d-flex">
+                        <div class="">
+                            <strong>EN</strong>
+                            <br><strong class="star-point-1">★★★</strong>
+                        </div>
+                        <div>＞</div>
+                        <div class="">
+                            <strong>JP</strong>
+                            <br><strong class="star-point-2">★</strong>
+                        </div>
+                    </div>
+                    <br><div class="comment-body p-2"><%= @fix_comment.comment.body %></div>
+                </div>
+            </div>
+        </div>
         <hr>
+        <div class="fix_commnt_box mx-auto">
+            <div class="mx-3">あなたの添削内容</div>
             <%= form_for([@comment, @fix_comment]) do |f| %>
             <div class="form-group p-3">
-                <%= f.text_field :body, class: "form-control" %>
+                <%= f.text_field :body, class: "form-control fix_commnt_body" %>
             </div>
-            <div class="form-group"><%= f.submit class: "btn btn-primary m-3",  title: ""%></div>
+            <div class="form-group fix_comment_form-group mx-auto">
+                <div><%= f.submit "添削する", class: "btn btn btn-danger btn_fix_commnt_submit",  title: ""%></div>
+            </div>
             <% end %>
         </div>
-    </div>
+    </div>    
 </div>
+
 
 </html>
 
 <style>
-.comment-flex{
-    display: flex;
-}
-
-.comment-box{
-    background: #DDDDDD;
-    border-radius: 4px ;
-    font-size: 80% ;
-}
-
-.comment-body{
-    font-size: 120% ;
-}
 
 .form-control{
     background-color: #FFC0CB;

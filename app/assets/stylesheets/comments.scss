@@ -1,3 +1,33 @@
 // Place all the styles related to the comments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.card-fix_comments{
+    width: 65%;
+}
+
+.btn_fix_commnt_submit{
+    width: 7rem;
+}
+
+.fix_commnt_body{
+
+}
+.fix_comment_box_title{
+    font-weight: bold;
+    width: 65%;
+}
+.fix_comment-container{
+
+
+}
+.fix_comment-container-line{
+    border: 1px solid #EEEEEE;
+    border-radius: 0.25rem;
+    background-color: white;
+    width: 65%;
+
+}
+.fix_comment_form-group{
+    width: 8rem;
+}

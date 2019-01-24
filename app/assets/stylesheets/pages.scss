@@ -5,6 +5,11 @@
 
 
 /* navbar 全体の背景色とボーダーカラー */
+
+.bg-light{
+    background-color:#F9F8F8 !important;
+
+}
 .navbar-default {
     background-color: #151515;
 }
@@ -262,16 +267,27 @@ section {
 
 .card-bottom{
     color: #BBBBBB;
+    margin-bottom: -1rem;
     
 }
 .posted-user a{
     color: #888888;
 }
 
+.comment-count{
+    color: white;
+    background-color: #BBBBBB;
+    border-radius:30rem;
 
+}
 
+.btn-vote{
+    opacity: 0.3;
+}
 
-
+.btn-vote:hover{
+    color: #D31027;
+}
 
  //left-box
  .left-box{

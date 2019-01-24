@@ -8,9 +8,16 @@
 
 .community-show-image{
     height: 20vh;
-    width: 75%;
+    width: 100%;
     object-fit: cover; 
     margin: auto;
+
+}
+
+.community-show-top-container{
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
+    width: 75%;
 
 }
 
@@ -24,11 +31,11 @@
     font-weight: bold;
     background-color: white;
     font-size: 1.2rem;
-    min-width: 100vh;
+
 }
 
 .community-title-box{
-    width: 65%
+    width: 75%;
 }
 
 .circle-com {
@@ -64,10 +71,18 @@
 
 .community-body{
     font-size: 0.8vw;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    margin: 0;
 }
 
 .card-title-communityname{
     font-size: 1.2vw; 
+}
+.card-title-communitylanguage{
+    font-size: 1.0vw; 
+    color: #657786;
 }
 
 .community-card{
@@ -75,6 +90,9 @@
     border-radius:0px;
     min-height:300px;
     max-height: 300px;
+    overflow: hidden;
+    margin: 0;
+    
 }
 
 .posts-box{
@@ -103,4 +121,39 @@
 .community-details{
     background-color: white;
 
+}
+
+.card-header-community{
+    font-weight: bold;
+    color: #BBBBBB;
+}
+
+.community-details-language{
+    color: gray;
+    font-size: 0.8rem;
+    
+
+}
+
+.count-number{
+    font-size: 1.2rem;
+    
+}
+
+.count-kind{
+    font-size: 0.7rem;
+
+}
+
+.community-edit a{
+    color: #BBBBBB;
+}
+
+
+.join-title{
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+.joinmember-name a{
+    color: #212529;
 }
