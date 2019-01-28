@@ -1,99 +1,15 @@
 <html>
 <div class="">
-    <div class="community-show-top-container mx-auto m-0 p-0">
-        <div class="community-show-top d-flex">
-        <%= image_tag @community.bg_image, class:'community-show-image p-0 mx-auto'%>
-        </div>
-        <div class="community-title mx-auto py-1" style="height:10vh;">
-            <div class="community-title-box d-flex mx-auto">
-                <div class="">
-                    <% if @community.image.attached? %>
-                    <%= image_tag @community.image, class:'profile-image p-2 ml-3', :size =>'80x80'%>
+<div class="community-show-top-container mx-auto m-0 p-0">
+    <div class="community-show-top">
+        <div class="community-show-top-community-detail d-md-none">
+            <div class="d-flex justify-content-between">
+                <div class="m-1 ml-5 d-flex">
+                    <% @community.users.each do |u| %>     
+                    <%= image_tag u.image, class:'community-counter-profile-image'%>      
                     <% end %>
                 </div>
-                <div class="ml-3 mt-4 d-flex">
-                    <div class="p-0"><%= @community.name %>/</div>
-                    <%= @community.language %><%= button_to '参加する', community_join_path(@community), class:"btn btn-outline-danger ml-5" %>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    
-    <div class="posts-box mt-5 mx-auto"style="display:flex;">
-        <div class="text-center col-12 col-md-8">
-            <div>
-                <div class="card mx-auto p-0 mb-1">
-                    <p>リンクを投稿してみよう</p>
-                    <%= form_for([@community, @post]) do |f| %>
-                        <div class="form-group px-5">
-                            <%= f.text_field :body, class: "form-control" ,placeholder: "コメントする..."%>
-                        </div>
-                        <div class="form-group px-5">
-                            <%= f.text_field :link, class: "form-control" ,placeholder: "URL"%>
-                        </div>                        
-                        <div class="form-group"><%= f.submit "投稿する", class: "btn btn-danger px-5" %></div>
-                    <% end %>
-                </div>
-            </div>
-            <div class="posts">
-                <% @community.posts.each do |p| %>
-                    <div class="card mx-auto mb-1">
-                        <div class="card-body d-flex p-0">
-                            <div style="width:40px;background-color: #EEEEEE;">
-                                <div class="m-2">
-                                <%= image_tag'up.png', class:'btn-vote',:size =>'18x18' %>
-                                <%= image_tag'down.png', class:'btn-vote',:size =>'18x18' %>
-                                </div>
-                            </div>
-                            <div class="post-content p-2 col-10">
-                                <div class="card-title post-box post-info1 d-flex m-0">
-                                    <div class="m-1">
-                                        <% if p.user.image.attached? %>
-                                            <%= image_tag p.user.image, class:'profile-image', :size =>'50x50'%>
-                                        <% end %>
-                                    </div>
-                                    <span class="mt-1">Posted by</span>
-                                    <strong class="pt-1 px-1 posted-user"><%= link_to p.user.username, p.user %></strong>
-                                    <a class="mt-1"><%= p.created_at %></a>  
-                                </div>
-                                <div class="card-text text-left m-3">
-                                    <div class="pb-3"><%= p.body.truncate(25) %></div>
-                                    <div class="d-flex">
-                                        <div>
-                                            <div class="url_title p-2">     
-                                                <strong><%= link_to p.url_title, p %></strong>
-                                                <div class="url_des"><%= p.description %></div>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <img class="url_image p-1 ml-5" src="<%= p.image %>" /> 
-                                        </div>
-                                    </div>
-                                    <div class="d-flex card-bottom mt-2">
-                                        <strong class="px-2"><%= link_to "コメント", p %><span class="comment-count m-1 px-1"><%= p.comments.count %></strong>
-                                        <strong class="px-2">共有</strong>
-                                        <strong class="px-2">保存</strong>
-                                    </div>    
-                                </div>
-                            </div>                          
-                        </div>
-                    </div>
-                <% end %>  
-                <% if @community.posts.count == 0 %>
-                <div class="mt-5">
-                    このコミュニティにはまだ投稿がありません。
-                    <br>ぜひあなたから話題をPOSTしてみましょう。
-                </div>
-                <% end %>
-            </div>
-        </div>
-        <div class="card card_community_details bg-light mb-3 d-lg-inline d-none mr-5 ml-0 float-right col-3 p-0">
-            <div class="card-header card-header-community">COMMUNITY DETAILS</div>
-            <div class="card-body community-details">
-                <h4 class="card-title m-0 "><%= @community.name %></h4>
-                <div class="community-details-language mt-0">使用する言語：<%= @community.language %></div>
-                <div class="community-counter m-3 d-flex">
+                <div class="community-counter mr-5 d-flex">
                     <div>
                         <strong><span class="count-number pl-3"><%= @community.users.count %></strong>
                         <div class="count-kind">Subscribers</div>
@@ -106,34 +22,143 @@
                         <div class="count-kind pl-3">Online</div>
                     </div>
                 </div>
-                <%= @community.body %>
-                <hr>
-                    <div>
-                    <div class="join-title">参加メンバー</div>
-                        <% @community.users.each do |u| %>
-                            <div class="m-1 d-flex">
-                                <div class=""><%= image_tag u.image, class:'profile-image', :size =>'50x50'%></div>
-                                <div class="joinmember-name pt-2 ml-3"><%= link_to u.username, u ,class:"" %></div>
-                            </div>    
-                        <% end %>
-                    </div>
-                <div class="community-edit">
-                <hr>
-                <%= link_to 'Edit', edit_community_path(@community) ,class:"" %>
+            </div>
+            <div class="community-show-community-body">
+                <div class="community-show-community-body-p p-0"><%= @community.body %></div>
+            </div>
+        </div>
+        <%= image_tag @community.bg_image, class:'community-show-image p-0 mx-auto'%>
+    </div>
+    <div class="community-title mx-auto py-1" style="height:10vh;">
+        <div class="community-title-box d-flex mx-auto">
+            <div class="">
+                <% if @community.image.attached? %>
+                <%= image_tag @community.image, class:'community-title-box-profile-image p-2'%>
+                <% end %>
+            </div>
+            <div>
+                <div class="community-title-box-name ml-3 d-flex">
+                    <div class="p-0"><%= @community.name %>/</div>
+                    <div><%= @community.language %></div>
                 </div>
+                <div class="d-md-none"><%= button_to '参加する', community_join_path(@community), class:"btn btn-outline-danger ml-5" %></div>
+            </div>
+            <div class="d-md-inline d-none"><%= button_to '参加する', community_join_path(@community), class:"btn btn-outline-danger ml-5 mt-3" %></div>
+        </div>
+    </div>
+</div>
+
+
+<div class="community-posts-box mt-5 mx-auto"style="display:flex;">
+    <div class="text-center col-12 col-md-8">
+        <div>
+            <div class="card mx-auto p-0 mb-1">
+                <p>リンクを投稿してみよう</p>
+                <%= form_for([@community, @post]) do |f| %>
+                    <div class="form-group px-5">
+                        <%= f.text_field :body, class: "form-control" ,placeholder: "コメントする..."%>
+                    </div>
+                    <div class="form-group px-5">
+                        <%= f.text_field :link, class: "form-control" ,placeholder: "URL"%>
+                    </div>                        
+                    <div class="form-group"><%= f.submit "投稿する", class: "btn btn-danger px-5" %></div>
+                <% end %>
+            </div>
+        </div>
+        <div class="posts">
+            <% @community.posts.each do |p| %>
+                <div class="card mx-auto mb-1">
+                    <div class="card-body d-flex p-0">
+                        <div style="width:40px;background-color: #EEEEEE;">
+                            <div class="m-2">
+                            <%= image_tag'up.png', class:'btn-vote',:size =>'18x18' %>
+                            <%= image_tag'down.png', class:'btn-vote',:size =>'18x18' %>
+                            </div>
+                        </div>
+                        <div class="post-content p-2 col-10">
+                            <div class="card-title post-box post-info1 d-flex m-0">
+                                <div class="m-1">
+                                    <% if p.user.image.attached? %>
+                                        <%= image_tag p.user.image, class:'profile-image', :size =>'50x50'%>
+                                    <% end %>
+                                </div>
+                                <div class="ml-2">
+                                    <div class="d-flex">
+                                        <span class="mt-1">Posted by</span>
+                                        <strong class="pt-1 px-1 posted-user"><%= link_to p.user.username, p.user %></strong>
+                                        <a class="mt-1 mt-1 d-lg-inline d-none"><%= p.created_at %></a>
+                                    </div>
+                                    <p class="mt-1 mt-1 created_at"><%= p.created_at %></p>
+                                </div>   
+                            </div>
+                            <div class="card-text text-left m-3">
+                                <div class="pb-3"><%= p.body.truncate(25) %></div>
+                                <div class="d-md-flex flex-row-reverse">
+                                    <img class="url_image p-1" src="<%= p.image %>" /> 
+                                    <div class="url_title p-2">     
+                                        <strong><%= link_to p.url_title, p %></strong>
+                                        <div class="url_des"><%= p.description %></div>
+                                    </div> 
+                                </div>
+                                <div class="d-flex card-bottom mt-2">
+                                    <strong class="px-2"><%= link_to "コメント", p %><span class="comment-count m-1 px-1"><%= p.comments.count %></strong>
+                                    <strong class="px-2">共有</strong>
+                                    <strong class="px-2">保存</strong>
+                                </div>    
+                            </div>
+                        </div>                          
+                    </div>
+                </div>
+            <% end %>  
+            <% if @community.posts.count == 0 %>
+            <div class="mt-5">
+                このコミュニティにはまだ投稿がありません。
+                <br>ぜひあなたから話題をPOSTしてみましょう。
+            </div>
+            <% end %>
+        </div>
+    </div>
+    <div class="card card_community_details bg-light mb-3 d-md-inline d-none mr-5 ml-0 float-right col-3 p-0">
+        <div class="card-header card-header-community">COMMUNITY DETAILS</div>
+        <div class="card-body community-details">
+            <h4 class="card-title m-0 "><%= @community.name %></h4>
+            <div class="community-details-language mt-0">使用する言語：<%= @community.language %></div>
+            <div class="community-counter m-3 d-flex">
+                <div>
+                    <strong><span class="count-number pl-3"><%= @community.users.count %></strong>
+                    <div class="count-kind">Subscribers</div>
+                </div>
+                <div>
+                ｜
+                </div>
+                <div>
+                    <strong class="count-number pl-3">30</strong>
+                    <div class="count-kind pl-3">Online</div>
+                </div>
+            </div>
+            <%= @community.body %>
+            <hr>
+                <div>
+                <div class="join-title">参加メンバー</div>
+                    <% @community.users.each do |u| %>
+                        <div class="m-1 d-flex">
+                            <div class=""><%= image_tag u.image, class:'profile-image', :size =>'50x50'%></div>
+                            <div class="joinmember-name pt-2 ml-3"><%= link_to u.username, u ,class:"" %></div>
+                        </div>    
+                    <% end %>
+                </div>
+            <div class="community-edit">
+            <hr>
+            <%= link_to 'Edit', edit_community_path(@community) ,class:"" %>
             </div>
         </div>
     </div>
+</div>
 </div>    
 
 </html>
 
 
-<style>
-.test{
-    background-color: red;
-}
-</style>
 
 
 
@@ -141,4 +166,6 @@
 
 
 
-                
+
+
+            

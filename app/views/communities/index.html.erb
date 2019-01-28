@@ -1,36 +1,37 @@
-<div class="community-index">
-  <div>
-    <div class="community-index-title mt-5" style="height:200px;">
-        <strong>あなたの興味にあったコミニティを探そう</strong>
-        <br><%= link_to '新しくコミニティを作成する', new_community_path, class:"btn btn-outline-danger my-2 my-sm-0" %>      
-    </div>
-  
-    <div class=""style="width: 90%;margin: auto;">
-      <div class="row">
-        <% @communities.each do |community| %>
-          <div class="col-12 col-md-3" style="width: 18rem; padding: 10px 20px;">
-            <div class="card community-card">
-              <% if community.image.attached? %>
-                <%= image_tag community.bg_image, class: "community-card-img-top" %>
-              <% end %>
-              <div class="card-body">
-                <div class="d-flex">
-                  <% if community.image.attached? %>
-                      <%= image_tag community.image, class:'profile-image mr-2', :size =>'50x50'%>
-                  <% end %>
-                  <div class="ml-1 mt-2">
-                  <h6 class="card-title m-0 card-title-communityname"><%= link_to community.name, community %></h6>
-                  <h6 class="card-title m-0 card-title-communitylanguage"><%= community.language %></h6>
-                  </div>
+<div>
+  <div class="community-index-title mt-5" style="height:200px;">
+      <strong class="mt-5 mx-auto">あなたの興味にあったコミニティを探そう</strong>
+      <div><%= link_to '新しくコミニティを作成する', new_community_path, class:"btn btn-outline-danger my-2 my-sm-0 mt-3" %></div>      
+  </div>
+  <div class=""style="width: 90%;margin: auto;">
+    <div class="row">
+      <% @communities.each do |community| %>
+        <div class="col-12 col-md-3" style="width: 18rem; padding: 10px 20px;">
+          <div class="card community-card">
+            <% if community.image.attached? %>
+              <%= image_tag community.bg_image, class: "community-card-img-top" %>
+            <% end %>
+            <div class="card-body">
+              <div class="d-flex">
+                <% if community.image.attached? %>
+                    <%= image_tag community.image, class:'profile-image mr-2', :size =>'50x50'%>
+                <% end %>
+                <div class="ml-1 mt-2">
+                <h6 class="card-title m-0 card-title-communityname"><%= link_to community.name, community %></h6>
+                <h6 class="card-title m-0 card-title-communitylanguage"><%= community.language %></h6>
                 </div>
-                <p class="card-text community-body"><%= community.body %></p>
               </div>
+              <p class="card-text community-body"><%= community.body %></p>
             </div>
           </div>
-        <% end %>
-      </div>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
+
+
+
 
 
 

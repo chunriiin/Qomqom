@@ -3,7 +3,7 @@
 
   <head>
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Chun</title>
+    <title>Qomqom</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -31,7 +31,7 @@
           MENU
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <%= link_to "コミュニティーを探す", 'communities', class:"dropdown-item"  %>
+          <%= link_to "コミュニティーを探す", communities_path, class:"dropdown-item"  %>
           <a class="dropdown-item" href="#">その他</a>
           <div class="dropdown-divider"></div>
           <% if user_signed_in? %>
@@ -69,7 +69,7 @@
 .navbar{
   background-color: black !important;
   opacity: 0.8;
-  min-width: 100vh;
+
 }
 .navbar-light .navbar-brand{
   color: white;

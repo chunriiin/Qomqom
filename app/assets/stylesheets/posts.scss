@@ -9,16 +9,7 @@
     object-fit: cover; 
 }
 
-.post-info1{
-    font-size: 1.0rem;
-    color: #657786;
-}
 
-@include media-breakpoint-up(md) {
-    .post-info1{
-      font-size: 0.3rem;
-    }
-  }
 
 .square {
     width: 100px;

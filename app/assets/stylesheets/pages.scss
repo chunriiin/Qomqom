@@ -214,23 +214,22 @@ section {
 
 
 
-//post
+//index-if user_signed_in
+
+
+///*画面サイズが767px以下の場合読み込む*/
 .post-content{
     width: 90%;
-}
-
-.text-left{
-    
-}
-
-.text-left a{
-    color: black;
 }
 
 .url_title{
     border: 1px solid #EEEEEE;
     border-radius: 0.25rem;
-    width:80rem;
+    width:20rem;
+}  
+
+.text-left a{
+    color: black;
 }
 
 .url_image{
@@ -239,36 +238,15 @@ section {
     width: 9rem;
     height: 9rem;
     object-fit: cover;
+    margin:1rem;
+    margin-top:0;
 }
-
-@include media-breakpoint-up(md) {
-    .url_image{
-        width: 10rem;
-        height: 10rem; 
-        object-fit: cover;   
-    }
-  }
- 
-.url_image img {
-    width: 8rem;
-    height: 8rem;
-    border-radius: 0.25rem;
-}
-
 .url_des{
     word-wrap: break-word;
 }
-@include media-breakpoint-up(md) {
-    .url_des{
-        font-size: 0.8rem;
-        word-wrap: break-word;
-    }
-  }
-
 .card-bottom{
     color: #BBBBBB;
-    margin-bottom: -1rem;
-    
+    margin-bottom: -1rem;    
 }
 .posted-user a{
     color: #888888;
@@ -278,39 +256,37 @@ section {
     color: white;
     background-color: #BBBBBB;
     border-radius:30rem;
-
 }
-
 .btn-vote{
     opacity: 0.3;
 }
-
-.btn-vote:hover{
-    color: #D31027;
+.post-info1{
+    font-size: 0.8rem;
+    color: #657786;
 }
 
- //left-box
- .left-box{
-    background-color:white;
-    overflow-y: scroll;
-    max-height: 100vw;
- }
-
- .left-box-menu{
-     color: #888888;
- }
-
- .left-box-menu a{
-    color: #888888;
- }
-
- .circle-user{
-    width: 10vh;
-    height:10vh;
-    border-radius: 50px;
-    border: 1px solid #657786;
- }
-
+@media screen and (max-width:767px) {
+    .post-content{
+        width: 90%;
+    }
+    .url_title{
+        width:17rem;
+        margin-top: 0.5rem;
+    }
+    .url_image{
+        width: 17rem;
+        height: 10rem; 
+        object-fit: cover; 
+        margin: 0;  
+    }
+    .url_des{
+        font-size: 0.8rem;
+        word-wrap: break-word;
+    }
+    .post-info1{
+        font-size: 0.2rem;
+    }
+  }
   //community-userprofile
   .user-profile{
     background-color:white;
@@ -346,3 +322,5 @@ section {
     background-color: black !important;
     opacity: 0.8;
  }
+
+ 
