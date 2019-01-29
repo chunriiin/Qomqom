@@ -412,5 +412,20 @@ section {
     opacity: 0.8;
  }
 
-
+//registration
+@media screen and (max-width:767px) {
+    .left-box{
+        width: 100%;
+        background-image: url(https://images.unsplash.com/photo-1506111583091-becfd4bfa05d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80);
+        background-repeat: none;
+        background-size: cover;
+        object-fit: cover;
+        min-height: 100vh;
+        color: white;
+    }
+    .registration_image{
+        background-color: white;
+        width: 85%;
+    }
+}
 

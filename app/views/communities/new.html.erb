@@ -3,7 +3,7 @@
         <div class="right-box m-0 mh-100 text-center d-md-inline d-none" style="height: 100vh;width: 50%;background:#FF0033;padding:3.0em;">
             <strong class="text-white" style="font-size: 2.0em;">新しいコミニティを作成する</strong>
         </div>
-        <div class="mh-100 p-5"style="width: 50%;">
+        <div class="left-box mh-100 p-5">
             <div>
                 <strong class="" style="font-size: 1.5em;">あなたから始まるコミニティで<br>つながりをつくろう</strong>
             </div>
@@ -12,8 +12,11 @@
             <div class="form-group"><%= f.text_field :name, class: "form-control form-control-white", placeholder: "name" %></div>
             <div class="form-group"><%= f.text_field :language, class: "form-control form-control-white", placeholder: "language" %></div>
             <div class="form-group"><%= f.text_field :body, class: "form-control form-control-white", placeholder: "どんなコミニティですか？" %></div>
+            <label for="password">コミュニティのアイコン画像</label>
             <div class="form-group"><%= f.file_field :image, class: "form-control form-control-white" %></div>
+            <label for="password">コミュニティの背景画像</label>
             <div class="form-group"><%= f.file_field :bg_image, class: "form-control form-control-white" %></div>
+            ※画像は必ず選択してください。エラーの原因になります。
             <div class="form-group"><%= f.submit class: "btn btn-outline-danger my-2 my-sm-0" %></div>
         <% end %>
         </div>
