@@ -7,19 +7,6 @@
 // img
 
 
-.user-show-top{
-    height: 20vh;
-    object-fit: cover; 
-    margin: auto;
-}
-
-.user-title{
-    font-weight: bold;
-    background-color: white;
-    font-size: 1.2rem;
-    
-}
-
 .user-show-bg{
     height: 20vh;
     width: 100%;
@@ -27,16 +14,6 @@
     background-image: url("https://images.unsplash.com/photo-1444084316824-dc26d6657664?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60");
     background-repeat: none;
     background-size: cover;
-}
-
-.user-show-top-container{
-    border: 1px solid rgba(0, 0, 0, 0.125);
-    border-radius: 0.25rem;
-    width: 75%;
-}
-
-.user-title-box{
-    width: 100%;
 }
 .float-left {
     float: left;
@@ -87,7 +64,99 @@ img {
 .user-details-language{
     color: gray;
     font-size: 0.8rem;
-    
-
 }
+.user-show-top-container{
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
+    width: 75%;
+}
+
+.user-show-top{
+    height: 20vh;
+    object-fit: cover; 
+    margin: auto;
+}
+.user-title{
+    font-weight: bold;
+    background-color: white;
+    font-size: 1.2rem;    
+}
+.user-title-box{
+    width: 100%;
+}
+.user-title-box-name{
+    margin-top: 1.2rem;
+}
+.user-title-box-profile-image{
+    height: 60px;
+    width:60px;
+    margin-left:0;
+}
+.profile-image{
+    border-radius: 50%;
+    height: 50px;
+    width:50px;
+}
+.user-posts-box{
+    width: 80%;
+    min-height: 100vh;
+}
+.created_at{
+    display: none;
+}
+@media screen and (max-width:767px) {
+    .user-show-top-container{
+        border: 1px solid rgba(0, 0, 0, 0.125);
+        border-radius: 0.25rem;
+        width: 100%;
+    }
+    .user-title{
+        font-weight: bold;
+        background-color: white;
+        font-size: 1.0rem;
+        height: 13vh;
+    }
+    .user-title-box{
+        width: 70%;
+    }
+    .user-title-box-name{
+        margin-top: 0.5rem;
+    }
+    .user-title-box-profile-image{
+        height: 60px;
+        width:60px;
+        margin-left:0;
+    }
+    .profile-image{
+        height: 50px;
+        width:50px;
+    }
+    .user-show-top-community-detail{
+        position: absolute;
+        color: white;
+        width: 100%;
+        box-shadow: 0px -50px 7px #21252982 inset;
+        margin-top: 5.3rem;;
+    }
+    .user-show-community-body{
+        overflow: hidden;
+        width: 90%;
+    }
+    .user-show-community-body .user-show-community-body-p{
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-size: 0.8rem;
+    }
+    
+ 
+    .user-posts-box{
+        width: 100%;
+        min-height: 100vh;
+    }
+    .created_at{
+        display: inline; 
+    }
+
+  }
 

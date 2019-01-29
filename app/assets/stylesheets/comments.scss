@@ -31,5 +31,27 @@
 .fix_comment_form-group{
     width: 8rem;
 }
+.fix_comment-time{
+    font-size: 0.8rem;
+    color: #657786;
+}
 
+  //fix_comments
+  @media screen and (max-width:767px) {
+    .card-fix_comments{
+        width: 95%;
+    } 
+    .fix_comment-container{
+        width: 95%;
+    }.fix_comment-container-line{
+        border: 1px solid #EEEEEE;
+        border-radius: 0.25rem;
+        background-color: white;
+        width: 95%;
+    } 
+    .fix_comment-time{
+        display: none;
+    }
+    
+  }
 

@@ -4,10 +4,7 @@
     <div class="community-show-top">
         <div class="community-show-top-community-detail d-md-none">
             <div class="d-flex justify-content-between">
-                <div class="m-1 ml-5 d-flex">
-                    <% @community.users.each do |u| %>     
-                    <%= image_tag u.image, class:'community-counter-profile-image'%>      
-                    <% end %>
+                <div>
                 </div>
                 <div class="community-counter mr-5 d-flex">
                     <div>
@@ -29,7 +26,7 @@
         </div>
         <%= image_tag @community.bg_image, class:'community-show-image p-0 mx-auto'%>
     </div>
-    <div class="community-title mx-auto py-1" style="height:10vh;">
+    <div class="community-title mx-auto py-1">
         <div class="community-title-box d-flex mx-auto">
             <div class="">
                 <% if @community.image.attached? %>
@@ -157,6 +154,8 @@
 </div>    
 
 </html>
+
+
 
 
 

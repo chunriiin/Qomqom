@@ -75,8 +75,8 @@
 </header>
 
 <div class="container-fluid2 stampeding">
-    <div class="container-box mx-auto d-flex p-5">
-        <div class="container-box-left p-2">
+    <div class="container-box d-md-flex flex-row mx-auto">
+        <div class="container-box-left">
             <strong class="container-box-title">Qomqomとは</strong>
             <p class="container-box-text">
             Qomqom (コムコム) は、世界中の人とやりとりができるコミニティ作成サービスです。
@@ -90,13 +90,9 @@
    
             </p>
         </div>
-        <div class="p-2">
-            <div class=" ml-3">
-                <div class="video">
-                    <iframe width="300" height="200" src="https://youtu.be/tx9C3EENvY8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                </div>
-            </div>  
-            <%= link_to "さあ始めよう", 'communities', class:"btn btn-outline-danger my-2 m-3"  %> 
+        <div class="container-box-image mx-auto text-center">
+            <div><%= image_tag'community.png', class:'image2'%></div>
+            <div><%= link_to "さあ始めよう", 'communities', class:"btn btn-success btn-xl my-5 m-3" %></div>
         </div>
     </div>
     
@@ -104,18 +100,18 @@
     <strong class="container-box-title">Qomqomでできること</strong>
     </div>
 
-    <div class="container-box2 mx-auto d-flex justify-content-around m-3">
-        <div class="m-1 container-box-text pl-5"> 
+    <div class="container-box2 mx-auto d-flex justify-content-around text-center m-3">
+        <div class="m-1 container-box-text"> 
             <strong>コミニティへの投稿</strong>
-            <br><%= image_tag'144613.png', class:'image2' %>
+            <br><%= image_tag'144613.png', class:'container-box2-image' %>
         </div>
         <div class="m-1 container-box-text"></strong>
             <strong>コメントの添削機能
-            <br><%= image_tag'118281.png', class:'image2' %>
+            <br><%= image_tag'118281.png', class:'container-box2-image' %>
         </div>
         <div class="m-1 container-box-text"></strong>
             <strong>ダイレクトメッセージ
-            <br><%= image_tag'144613.png', class:'image2' %>
+            <br><%= image_tag'142979.png', class:'container-box2-image' %>
         </div>
     </div>
 
@@ -132,19 +128,7 @@
 <% end %>
 
 
-<style>
 
-
-.image2{
-    width:50% ;
-}
-
-
-
-
-
-            
-</style>
 
 
 

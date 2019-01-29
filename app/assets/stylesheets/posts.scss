@@ -103,23 +103,10 @@ img.index-post {
     font-size: 1.0rem;
 }
 
-@include media-breakpoint-up(md){
-    .star-point-1{
-        font-size: 0.5rem ;
-    } 
-}
-
 .star-point-2{
     color: blue;
     font-size: 1.0rem;
 }
-
-@include media-breakpoint-up(md){
-    .star-point-2{
-        font-size: 0.5rem ;
-    } 
-}
-
 .comment-flex{
     display: flex;
 }
@@ -131,13 +118,6 @@ img.index-post {
 .comment-box a{
     color: black;
 }
-
-@include media-breakpoint-up(md) {
-    .comment-box{
-      font-size: 0.8rem;
-    }
-  }
-
 
 .comment-time{
     font-size: 0.8rem ;
@@ -179,3 +159,30 @@ img.index-post {
     color: black;
     font-weight: bold;
 }
+
+
+@media screen and (max-width:767px) {
+    .comment-body{
+        background-color: #eeeeee;
+        border-radius: 4px ;
+        font-size: 1.0rem ;
+        min-width: 12rem;
+        max-width: 12rem;
+        word-wrap: break-word;
+    }
+    .comment-box{
+        font-size:1.0rem;   
+    }
+    .learn-language{
+        font-size: 0.5rem ;
+        color: #657786;
+    }
+    .star-point-1{
+        font-size: 0.5rem ;
+    } 
+    .star-point-2{
+        font-size: 0.5rem ;
+    } 
+    
+  }
+
